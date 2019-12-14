@@ -1,17 +1,25 @@
 
-#PostgreSQL DB
-
---Creating a Database
+-- PostgeSQL 
+-- version 11
+-- https://www.postgres.org
+-- Host: 127.0.0.1:5432
+-- Generation Time: Dec 12, 20189 at 04:56 PM
+--
+-- Database: Miraclib
+--
+-- --------------------------------------------------------
+--
+-- Table structure
 
 CREATE DATABASE Miraclib;
-
 
 --Creating tables 
 
 CREATE TABLE public.books (
 	id bigserial not null primary key,
 	title char not null,
-	isnb char not null,
+	genre char not null,
+	isbn char not null,
 	whom_added_id char,
 	image bytea,
 	borrowe_date timestamp,
