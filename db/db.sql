@@ -12,22 +12,30 @@ CREATE TABLE public.books (
 	id bigserial not null primary key,
 	title char not null,
 	isnb char not null,
-	book_count int, 
+---	book_count int,    buni bowqachasiga aniqlimiz  
+	whom_added_id char,
 	image bytea,
-	whom_added_id char 
+	borrowe_date timestamp,
+	return_date timestamp, 
 );
 
 
-CREATE TABLE public.admins (
+CREATE TABLE public.unique_books(
+	isnb char  NOT NULL PRIMARY KEY,
+	title char NOT NULL,
+	book_count integer 
+)
+
+
+CREATE TABLE public.users (
 	nick_name char,
 	id char NOT NULL PRIMARY KEY,
-	pass chkpass char NOT NULL,
+	password char NOT NULL,
 	last_login_time timestamp,
 	last_logout_time timestamp,
-	active_status boolean
+	active_status boolean,
+	update_librerians_privlage boolean,
+	update_students_privlage boolean,
+	update_books_privlage boolean
 )
 
-
-CREATE TABLE public.librerians(
-	
-)
