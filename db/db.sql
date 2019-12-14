@@ -12,7 +12,6 @@ CREATE TABLE public.books (
 	id bigserial not null primary key,
 	title char not null,
 	isnb char not null,
----	book_count int,    buni bowqachasiga aniqlimiz  
 	whom_added_id char,
 	image bytea,
 	borrowe_date timestamp,
@@ -20,10 +19,11 @@ CREATE TABLE public.books (
 );
 
 
-CREATE TABLE public.unique_books(
+CREATE TABLE public.books_unique_list (
 	isnb char  NOT NULL PRIMARY KEY,
 	title char NOT NULL,
-	book_count integer 
+	book_count integer,
+	available boolean NOT NULL
 );
 
 
@@ -40,5 +40,16 @@ CREATE TABLE public.users (
 );
 
 
+CREATE TABLE public.actions_track_list(
+	id bigserial NOT NULL PRIMARY KEY,
+	user_id char NOT NULL,
+	action_id integer NOT NULL,
+	action_description char NOT NULL,
+	made_date timestamp
+);
 
+CREATE TABLE public.action_description (
+	id integer NOT NULL PRIMARY KEY,
+	action_description char NOT NULL
+);
 
