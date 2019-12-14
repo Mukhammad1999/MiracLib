@@ -63,12 +63,55 @@ insert into public.books (id, title, genre, isbn, whom_added_id, image, borrowed
 
 
 
+
+
+
 CREATE TABLE public.books_unique_list (
 	isnb char  NOT NULL PRIMARY KEY,
 	title char NOT NULL,
 	book_count integer,
 	available boolean NOT NULL
 );
+
+
+-- Dumping data for table 'books'
+
+
+insert into public.books_unique_list (isbn, title, book_count, available) values ('118456618-6', 'Horde, The (La Horde)', 25, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('441565065-1', 'Loosies', 21, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('512313038-1', 'Six Weeks', 54, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('017468577-7', 'Smashing Time', 20, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('089141206-9', 'Mill and the Cross, The', 90, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('967579476-3', 'From Beginning to End (Do Começo ao Fim)', 60, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('130794846-4', 'The Beautiful Story', 91, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('190125426-7', 'Notting Hill', 93, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('812731535-4', 'Scientist, The', 57, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('590404517-4', 'Yertle the Turtle and Other Stories', 32, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('200814755-X', 'Man Who Wasn''t There, The', 19, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('762230918-4', 'Happy Birthday to Me', 73, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('521078291-3', 'Story of Floating Weeds, A (Ukikusa monogatari)', 15, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('014484185-1', 'Urban Legends: Final Cut', 28, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('851446304-7', 'The Cyclone', 3, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('761102124-9', 'Pigskin Parade', 34, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('860181446-8', 'Hans (Kukkulan kuningas) ', 37, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('692291440-6', 'Houseguest', 78, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('185442292-8', 'Mendy: A Question of Faith', 21, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('312766304-8', 'The Golden Voyage of Sinbad', 62, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('352441626-8', 'Cube Zero', 47, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('753171398-5', 'Look Who''s Talking', 42, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('868941557-2', 'Adam & Paul', 66, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('901071335-0', 'Cheaper by the Dozen', 32, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('061602867-9', 'Last Season, The', 79, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('485209497-7', 'Private Detective 62', 21, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('808604020-8', 'Generation Iron', 17, false);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('745057075-0', 'Bribe, The', 47, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('160322638-9', 'Last of the Red Hot Lovers', 84, true);
+insert into public.books_unique_list (isbn, title, book_count, available) values ('897835385-1', 'Hunt for Red October, The', 53, true);
+
+
+
+
+
 
 
 CREATE TABLE public.users (
@@ -82,6 +125,45 @@ CREATE TABLE public.users (
 	update_students_privlage boolean,
 	update_books_privlage boolean
 );
+
+
+-- Dumping data for table 'users'
+
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('mtithacott0', 427215, 'cfNR2bO', '16:20:42', '12:43:12', false, true, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('ksills1', 869992, 'GTMp59gchD', '0:16:24', '4:32:19', true, false, false, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('rfermer2', 436831, 'LHLtZCnFb9wX', '11:18:10', '13:22:20', false, true, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('wbielfelt3', 884964, 'UKaRvGQVU', '5:15:07', '0:07:55', false, false, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('dwieprecht4', 620907, 'G1I83uZA', '10:43:44', '16:47:19', true, false, true, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('bmcdavitt5', 975568, 'BoqEXlvE', '13:45:22', '20:23:47', true, true, true, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('hwroe6', 826356, 'dKlrGcJp', '16:10:39', '13:14:20', true, true, true, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('gspurryer7', 115181, 'O44QgEdNseJD', '15:14:23', '3:39:30', true, false, true, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('cduffyn8', 948133, '2wPr2Bq', '14:16:20', '17:25:38', false, true, true, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('jparradine9', 749656, 'pnnEvODG', '23:41:14', '1:33:44', true, false, true, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('mdacombea', 547251, '4LMdZXlsYX2', '23:54:20', '18:49:18', true, false, true, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('dstatterb', 326341, 'zLBmeMW', '17:24:57', '8:18:04', false, false, false, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('gvasyatkinc', 420690, 'lRQBr8', '10:05:13', '2:26:26', true, false, true, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('cmcintoshd', 760701, 'b5K8rWRzV', '17:50:50', '7:11:34', true, false, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('aeadese', 562895, 'TI4LVJAlqlz', '6:53:30', '21:42:25', true, true, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('bmccartanf', 155019, '3P7fDk', '19:18:22', '5:21:56', false, false, false, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('ubonnavantg', 466301, 'Ew2HEo2B8U94', '8:33:38', '3:44:00', true, false, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('nsandefordh', 972525, 'lKIFwLSM', '6:44:51', '16:26:25', false, true, false, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('kpoundsfordi', 977790, '3ikpohjD9Hhn', '8:14:21', '7:03:07', true, false, true, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('ccrocketj', 746253, '1ghBn1Ia', '11:42:24', '9:59:51', false, true, true, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('jbilbyk', 463184, 'IYcxq3k', '7:39:03', '12:30:46', true, false, true, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('jjaanl', 595460, 'vdJs3o', '6:12:39', '1:42:59', false, false, true, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('bcantillonm', 657033, 'vvV7AyPzqe', '12:27:49', '23:00:58', true, false, true, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('wfeehamn', 234021, 'MtcwRonXHWLT', '11:55:54', '12:14:45', false, true, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('rmcsheeo', 491498, 'GqHVqZ1', '8:20:57', '9:56:22', false, false, true, true);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('idabrowskip', 157911, 't5s5YT', '4:30:14', '19:44:24', true, false, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('hblezardq', 243880, '1GktVFshhGnR', '9:55:44', '16:31:16', true, true, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('mpatmorer', 976792, 'buHeqDbhg', '6:05:43', '11:37:09', true, true, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('eheaneys', 617102, 'Se9zvMEV', '2:43:10', '7:52:44', false, true, false, false);
+insert into public.users (nick_name, id, password, last_login_time, last_logout_time, active_status, update_librerians_privlage, update_students_privlage, update_books_privlage) values ('bshillitot', 656931, 'GZSJayY3WCdg', '16:51:02', '6:42:30', false, false, true, true);
+
+
+
+
+
 
 
 CREATE TABLE public.actions_track_list(
