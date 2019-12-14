@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1024.0" prefWidth="1444.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpPage">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-18.0" layoutY="-7.0" prefHeight="135.0" prefWidth="1467.0" style="-fx-background-color: #2E279D;" text="      Sign Up To Account" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Line endX="50.0" fill="WHITE" layoutX="740.0" layoutY="104.0" startX="-50.0" stroke="WHITE" strokeWidth="5.0" />
+      <VBox layoutX="394.0" layoutY="202.0" prefHeight="502.0" prefWidth="690.0">
+         <children>
+            <TextField prefHeight="75.0" prefWidth="440.0" promptText="Login" styleClass="icontextfieldpass" stylesheets="@style.css">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField prefHeight="75.0" prefWidth="440.0" promptText="Password">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="90.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField prefHeight="75.0" prefWidth="440.0" promptText="E-mail">
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
+      <Button alignment="CENTER" layoutX="645.0" layoutY="709.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2E279D;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
