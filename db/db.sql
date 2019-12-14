@@ -3,7 +3,7 @@
 
 --Creating a Database
 
-CREATE DATABASE Miraclib
+CREATE DATABASE Miraclib;
 
 
 --Creating tables 
@@ -20,11 +20,12 @@ CREATE TABLE public.books (
 );
 
 
-CREATE TABLE public.unique_books(
+CREATE TABLE public.books_unique_list (
 	isnb char  NOT NULL PRIMARY KEY,
 	title char NOT NULL,
-	book_count integer 
-)
+	book_count integer,
+	available boolean NOT NULL
+);
 
 
 CREATE TABLE public.users (
@@ -37,8 +38,19 @@ CREATE TABLE public.users (
 	update_librerians_privlage boolean,
 	update_students_privlage boolean,
 	update_books_privlage boolean
-)
+);
 
 
+CREATE TABLE public.actions_track_list(
+	id bigserial NOT NULL PRIMARY KEY,
+	user_id char NOT NULL,
+	action_id integer NOT NULL,
+	action_description char NOT NULL,
+	made_date timestamp
+);
 
+CREATE TABLE public.action_description (
+	id integer NOT NULL PRIMARY KEY,
+	action_description char NOT NULL
+);
 
