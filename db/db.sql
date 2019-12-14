@@ -39,3 +39,6 @@ CREATE TABLE public.users (
 	update_books_privlage boolean
 )
 
+
+
+
