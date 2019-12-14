@@ -12,7 +12,6 @@ CREATE TABLE public.books (
 	id bigserial not null primary key,
 	title char not null,
 	isnb char not null,
----	book_count int,    buni bowqachasiga aniqlimiz  
 	whom_added_id char,
 	image bytea,
 	borrowe_date timestamp,
