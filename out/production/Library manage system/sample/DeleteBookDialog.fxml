@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="366.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DeleteBookDialogController">
+   <children>
+      <TextField layoutX="174.0" layoutY="124.0" prefHeight="25.0" prefWidth="196.0" promptText="Enter the title" />
+      <Button layoutX="229.0" layoutY="157.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" style="-fx-background-color: red;" text="Delete" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+   </children>
+</AnchorPane>
