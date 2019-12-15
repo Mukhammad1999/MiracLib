@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="676.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.BootViewController">
+<AnchorPane prefHeight="676.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BootViewController">
    <children>
       <VBox layoutY="-1.0" prefHeight="676.0" prefWidth="208.0">
          <children>
             <Button mnemonicParsing="false" onAction="#AddBook" prefHeight="170.0" prefWidth="208.0" text="Add" />
             <Button mnemonicParsing="false" prefHeight="170.0" prefWidth="208.0" text="Modify" />
-            <Button mnemonicParsing="false" prefHeight="170.0" prefWidth="208.0" text="Delete" />
+            <Button mnemonicParsing="false" onAction="#DeleteBook" prefHeight="170.0" prefWidth="208.0" text="Delete" />
             <Button mnemonicParsing="false" prefHeight="170.0" prefWidth="208.0" text="Display" />
          </children>
       </VBox>

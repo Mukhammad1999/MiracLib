@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1444.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpPage">
+<AnchorPane prefHeight="1024.0" prefWidth="1444.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-18.0" layoutY="-7.0" prefHeight="135.0" prefWidth="1467.0" style="-fx-background-color: #2E279D;" text="      Sign Up To Account" textAlignment="CENTER" textFill="WHITE">
          <font>
@@ -42,7 +42,7 @@
             </TextField>
          </children>
       </VBox>
-      <Button alignment="CENTER" layoutX="645.0" layoutY="709.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2E279D;" text="Sign Up" textFill="WHITE">
+      <Button alignment="CENTER" layoutX="645.0" layoutY="709.0" mnemonicParsing="false" onAction="#SignUpBut" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2E279D;" text="Sign Up" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
