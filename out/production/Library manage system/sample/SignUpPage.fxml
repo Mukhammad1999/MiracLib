@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -19,20 +20,20 @@
       <Line endX="50.0" fill="WHITE" layoutX="740.0" layoutY="104.0" startX="-50.0" stroke="WHITE" strokeWidth="5.0" />
       <VBox layoutX="394.0" layoutY="202.0" prefHeight="502.0" prefWidth="690.0">
          <children>
-            <TextField prefHeight="75.0" prefWidth="440.0" promptText="Login" styleClass="icontextfieldpass" stylesheets="@style.css">
+            <TextField fx:id="loginarea" prefHeight="75.0" prefWidth="440.0" promptText="Login" styleClass="icontextfieldpass" stylesheets="@style.css">
                <font>
                   <Font size="24.0" />
                </font>
-            </TextField>
-            <TextField prefHeight="75.0" prefWidth="440.0" promptText="Password">
                <VBox.margin>
-                  <Insets bottom="30.0" top="90.0" />
+                  <Insets bottom="45.0" />
                </VBox.margin>
-               <font>
-                  <Font size="18.0" />
-               </font>
             </TextField>
-            <TextField prefHeight="75.0" prefWidth="440.0" promptText="E-mail">
+            <PasswordField fx:id="passwordarea" prefHeight="76.0" prefWidth="690.0" promptText="Password">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="e_mailarea" prefHeight="75.0" prefWidth="440.0" promptText="E-mail">
                <VBox.margin>
                   <Insets top="60.0" />
                </VBox.margin>
@@ -42,10 +43,14 @@
             </TextField>
          </children>
       </VBox>
-      <Button alignment="CENTER" layoutX="645.0" layoutY="709.0" mnemonicParsing="false" onAction="#SignUpBut" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2E279D;" text="Sign Up" textFill="WHITE">
+      <Button fx:id="Sigupbutton" alignment="CENTER" layoutX="645.0" layoutY="709.0" mnemonicParsing="false" onAction="#SignUpBut" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #2E279D;" text="Sign Up" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
+      <Label fx:id="forlogin" layoutX="1169.0" layoutY="210.0" prefHeight="56.0" prefWidth="248.0" />
+      <Label fx:id="forpass" layoutX="1172.0" layoutY="330.0" prefHeight="56.0" prefWidth="254.0" />
+      <Label fx:id="foremal" layoutX="1155.0" layoutY="462.0" prefHeight="56.0" prefWidth="275.0" />
+      <Label fx:id="incons" contentDisplay="CENTER" layoutX="506.0" layoutY="783.0" prefHeight="138.0" prefWidth="395.0" />
    </children>
 </AnchorPane>
