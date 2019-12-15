@@ -163,9 +163,6 @@ insert into public.users (nick_name, id, password, last_login_time, last_logout_
 
 
 
-
-
-
 CREATE TABLE public.actions_track_list(
 	id bigserial NOT NULL PRIMARY KEY,
 	user_id char NOT NULL,
@@ -211,24 +208,27 @@ insert into public.actions_track_list (id, user_id, action_id, action_descriptio
 
 
 
+
+
 CREATE TABLE public.action_description (
 	id integer NOT NULL PRIMARY KEY,
 	action_description char NOT NULL
 );
 
+-- Dumping data for table 'action_description'
 
-insert into public.action_description(id,action_description) values (0,'loged out  from the system')
-insert into public.action_description(id,action_description) values (1,'loged in to the system')
-insert into public.action_description(id,action_description) values (2,'added librerian')
-insert into public.action_description(id,action_description) values (3,'updated librerian') 
-insert into public.action_description(id,action_description) values (4,'deleted librerian')
-insert into public.action_description(id,action_description) values (5,'added student')
-insert into public.action_description(id,action_description) values (6,'updated student')
-insert into public.action_description(id,action_description) values (7,'deleted student')
-insert into public.action_description(id,action_description) values (8,'added book')
-insert into public.action_description(id,action_description) values (9,'updated book')
-insert into public.action_description(id,action_description) values (10,'deleted book')
-insert into public.action_description(id,action_description) values (11,'registered a loan')
-insert into public.action_description(id,action_description) values (12,'confirmed book return') 
-insert into public.action_description(id,action_description) values (13,'blocked student')
-insert into public.action_description(id,action_description) values (14,'fined a student')
+insert into public.action_description(id,action_description) values (0,'loged out  from the system');
+insert into public.action_description(id,action_description) values (1,'loged in to the system');
+insert into public.action_description(id,action_description) values (2,'added librerian');
+insert into public.action_description(id,action_description) values (3,'updated librerian'); 
+insert into public.action_description(id,action_description) values (4,'deleted librerian');
+insert into public.action_description(id,action_description) values (5,'added student');
+insert into public.action_description(id,action_description) values (6,'updated student');
+insert into public.action_description(id,action_description) values (7,'deleted student');
+insert into public.action_description(id,action_description) values (8,'added book');
+insert into public.action_description(id,action_description) values (9,'updated book');
+insert into public.action_description(id,action_description) values (10,'deleted book');
+insert into public.action_description(id,action_description) values (11,'registered a loan');
+insert into public.action_description(id,action_description) values (12,'confirmed book return'); 
+insert into public.action_description(id,action_description) values (13,'blocked student');
+insert into public.action_description(id,action_description) values (14,'fined a student');
