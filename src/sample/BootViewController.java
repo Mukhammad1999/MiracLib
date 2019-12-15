@@ -8,7 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import java.sql.*;
 
 
 import java.io.IOException;
@@ -26,6 +26,7 @@ public class BootViewController implements Initializable {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root1));
         stage.show();
+
     }
     public void DisplayBook(ActionEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BootAdder.fxml"));
@@ -51,6 +52,8 @@ public class BootViewController implements Initializable {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root1));
         stage.show();
+
+
     }
     public void BackButton(ActionEvent event) throws IOException{
 

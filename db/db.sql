@@ -17,13 +17,13 @@ CREATE DATABASE Miraclib;
 
 CREATE TABLE public.books (
 	id bigserial not null primary key,
-	title char not null,
-	genre char not null,
-	isbn char not null,
-	whom_added_id char,
+	title varchar not null,
+	genre varchar not null,
+	isbn varchar not null,
+	whom_added_id varchar,
 	image bytea,
 	borrowed_date timestamp,
-	return_date timestamp, 
+	return_date timestamp
 );
 
 
@@ -67,8 +67,8 @@ insert into public.books (id, title, genre, isbn, whom_added_id, image ) values 
 
 
 CREATE TABLE public.books_unique_list (
-	isnb char NOT NULL PRIMARY KEY,
-	title char NOT NULL,
+	isbn varchar NOT NULL PRIMARY KEY,
+	title varchar NOT NULL,
 	book_count integer,
 	available boolean NOT NULL
 );
@@ -115,9 +115,9 @@ insert into public.books_unique_list (isbn, title, book_count, available) values
 
 
 CREATE TABLE public.users (
-	nick_name char,
-	id char NOT NULL PRIMARY KEY,
-	password char NOT NULL,
+	nick_name varchar,
+	id varchar NOT NULL PRIMARY KEY,
+	password varchar NOT NULL,
 	last_login_time timestamp,
 	last_logout_time timestamp,
 	active_status boolean,
@@ -165,9 +165,9 @@ insert into public.users (nick_name, id, password, active_status, update_libreri
 
 CREATE TABLE public.actions_track_list(
 	id bigserial NOT NULL PRIMARY KEY,
-	user_id char NOT NULL,
+	user_id varchar NOT NULL,
 	action_id integer NOT NULL,
-	action_description char NOT NULL,
+	action_description varchar NOT NULL,
 	due_date timestamp
 );
 
@@ -212,7 +212,7 @@ insert into public.actions_track_list (id, user_id, action_id, action_descriptio
 
 CREATE TABLE public.action_description (
 	id integer NOT NULL PRIMARY KEY,
-	action_description char NOT NULL
+	action_description varchar NOT NULL
 );
 
 -- Dumping data for table 'action_description'

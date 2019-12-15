@@ -42,21 +42,14 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox prefHeight="71.0" prefWidth="1444.0" />
-                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="283.0" style="-fx-border-radius: 16;" styleClass="button-container" stylesheets="@style.css">
+                  <HBox alignment="CENTER" prefHeight="126.0" prefWidth="1444.0">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignInPageC" prefHeight="50.0" prefWidth="133.0" style="-fx-border-color: darkslateblue;" styleClass="button1" stylesheets="@style.css" text="Sign In" textFill="#2c1eeb" />
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignUpPageC" prefHeight="50.0" prefWidth="133.0" style="-fx-border-color: darkslateblue;" styleClass="button2" stylesheets="@style.css" text="Sign Up" textFill="#2c1eeb" />
+                        <Button mnemonicParsing="false" onAction="#SignInPageC" prefHeight="42.0" prefWidth="100.0" text="Log In" />
+                        <Button mnemonicParsing="false" onAction="#SignUpPageC" prefHeight="42.0" prefWidth="93.0" text="Sign Up" />
                      </children>
                   </HBox>
-                  <VBox alignment="CENTER" prefHeight="64.0" prefWidth="1444.0">
-                     <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="63.0" style="-fx-background-color: white; -fx-border-color: darkslateblue;" text="Store" textFill="#4220bf" />
-                     </children>
-                  </VBox>
                </children>
             </VBox>
-            <HBox prefHeight="71.0" prefWidth="1444.0" />
          </children>
       </VBox>
    </children>
