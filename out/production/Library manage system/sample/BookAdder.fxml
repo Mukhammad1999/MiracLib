@@ -1,35 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BootViewController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1056.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BookAdderController">
    <children>
-      <AnchorPane layoutX="-2.0" layoutY="-4.0" prefHeight="79.0" prefWidth="1448.0" style="-fx-background-color: C72C41;">
+      <HBox alignment="CENTER" prefHeight="81.0" prefWidth="1057.0" style="-fx-background-color: #C72C41;">
          <children>
-            <Button layoutX="-7.0" layoutY="1.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="78.0" style="-fx-background-color: transparent;" />
-            <Label layoutX="1307.0" layoutY="9.0" prefHeight="56.0" prefWidth="119.0" style="-fx-background-color: white; -fx-background-radius: 25px;" />
-            <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="1380.0" layoutY="17.0">
-               <image>
-                  <Image url="@icons/23228%201.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="72.0" layoutY="1.0" prefHeight="59.0" prefWidth="392.0" text="Adding New Book" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#Back" prefHeight="81.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Back" />
+            <Label prefHeight="81.0" prefWidth="410.0" text="Adding new Book" textFill="WHITE">
                <font>
-                  <Font size="48.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
-            <Button layoutX="1324.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: transparent;" />
-            <Line endX="14.0" layoutX="1338.0" layoutY="23.0" startX="-14.0" strokeWidth="3.0" />
-            <Line endX="14.0" layoutX="1337.0" layoutY="47.0" startX="-14.0" strokeWidth="3.0" />
-            <Line endX="14.0" layoutX="1338.0" layoutY="36.0" startX="-14.0" strokeWidth="3.0" />
-
+            <Label alignment="CENTER" prefHeight="81.0" prefWidth="430.0" />
+            <Label alignment="CENTER" prefHeight="55.0" prefWidth="138.0" style="-fx-background-color: white; -fx-border-radius: 25px;" />
          </children>
-      </AnchorPane>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="121.0" prefHeight="100.0" prefWidth="1057.0" style="-fx-border-color: black;">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="235.0" text="Title:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="title" prefHeight="48.0" prefWidth="285.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="-18.0" layoutY="223.0" prefHeight="93.0" prefWidth="601.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="235.0" text="Cover">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#CoverFileChoose" prefHeight="50.0" prefWidth="284.0" text="Choose your file" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="-11.0" layoutY="337.0" prefHeight="92.0" prefWidth="601.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="235.0" text="Genre">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="genre" prefHeight="48.0" prefWidth="286.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="-8.0" layoutY="436.0" prefHeight="75.0" prefWidth="601.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="235.0" text="Author">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="author" prefHeight="33.0" prefWidth="284.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutY="532.0" prefHeight="75.0" prefWidth="590.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="240.0" text="Year:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="year" prefHeight="32.0" prefWidth="284.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="-1.0" layoutY="625.0" prefHeight="187.0" prefWidth="573.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="235.0" text="Description">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="descr" prefHeight="132.0" prefWidth="284.0" />
+         </children>
+      </HBox>
+      <Button layoutX="476.0" layoutY="844.0" mnemonicParsing="false" onAction="#Accept" prefHeight="41.0" prefWidth="108.0" style="-fx-background-color: #C72C41;" text="Accept" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <VBox layoutX="690.0" layoutY="220.0">
+         <children>
+            <AnchorPane prefHeight="708.0" prefWidth="369.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fitHeight="377.0" fitWidth="379.0" layoutX="-20.0" layoutY="326.0">
+                     <image>
+                        <Image url="@icons/Untitled-3%201.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="Infoview" layoutX="19.0" layoutY="17.0" prefHeight="306.0" prefWidth="335.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

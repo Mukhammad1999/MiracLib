@@ -11,12 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1056.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1056.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BookAdderController">
    <children>
       <HBox alignment="CENTER" prefHeight="81.0" prefWidth="1057.0" style="-fx-background-color: #C72C41;">
          <children>
-            <Button mnemonicParsing="false" prefHeight="81.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Back" />
+            <Button mnemonicParsing="false" onAction="#Back" prefHeight="81.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Back" />
             <Label prefHeight="81.0" prefWidth="410.0" text="Adding new Book" textFill="WHITE">
                <font>
                   <Font size="36.0" />
@@ -33,7 +32,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField prefHeight="48.0" prefWidth="285.0" />
+            <TextField fx:id="title" prefHeight="48.0" prefWidth="285.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="-18.0" layoutY="223.0" prefHeight="93.0" prefWidth="601.0">
@@ -43,7 +42,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="284.0" text="Choose your file" />
+            <Button mnemonicParsing="false" onAction="#CoverFileChoose" prefHeight="50.0" prefWidth="284.0" text="Choose your file" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="-11.0" layoutY="337.0" prefHeight="92.0" prefWidth="601.0">
@@ -53,7 +52,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ComboBox prefHeight="48.0" prefWidth="286.0" />
+            <ComboBox fx:id="genre" prefHeight="48.0" prefWidth="286.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="-8.0" layoutY="436.0" prefHeight="75.0" prefWidth="601.0">
@@ -63,7 +62,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField prefHeight="33.0" prefWidth="284.0" />
+            <TextField fx:id="author" prefHeight="33.0" prefWidth="284.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutY="532.0" prefHeight="75.0" prefWidth="590.0">
@@ -73,7 +72,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField prefHeight="32.0" prefWidth="284.0" />
+            <TextField fx:id="year" prefHeight="32.0" prefWidth="284.0" />
          </children>
       </HBox>
       <HBox layoutX="-1.0" layoutY="625.0" prefHeight="187.0" prefWidth="573.0">
@@ -83,10 +82,10 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField prefHeight="132.0" prefWidth="284.0" />
+            <TextField fx:id="descr" prefHeight="132.0" prefWidth="284.0" />
          </children>
       </HBox>
-      <Button layoutX="476.0" layoutY="844.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="108.0" style="-fx-background-color: #C72C41;" text="Accept" textFill="WHITE">
+      <Button layoutX="476.0" layoutY="844.0" mnemonicParsing="false" onAction="#Accept" prefHeight="41.0" prefWidth="108.0" style="-fx-background-color: #C72C41;" text="Accept" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -100,7 +99,7 @@
                         <Image url="@icons/Untitled-3%201.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="19.0" layoutY="17.0" prefHeight="306.0" prefWidth="335.0" text="Mandatory info" />
+                  <Label fx:id="Infoview" layoutX="19.0" layoutY="17.0" prefHeight="306.0" prefWidth="335.0" />
                </children>
             </AnchorPane>
          </children>

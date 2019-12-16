@@ -45,8 +45,8 @@
                   <HBox prefHeight="71.0" prefWidth="1444.0" />
                   <HBox alignment="CENTER" prefHeight="50.0" prefWidth="283.0" style="-fx-border-radius: 16;" styleClass="button-container" stylesheets="@style.css">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignInPageC" prefHeight="50.0" prefWidth="133.0" style="-fx-border-color: darkslateblue;" styleClass="button1" stylesheets="@style.css" text="Sign In" textFill="#2c1eeb" />
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignUpPageC" prefHeight="50.0" prefWidth="133.0" style="-fx-border-color: darkslateblue;" styleClass="button2" stylesheets="@style.css" text="Sign Up" textFill="#2c1eeb" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignInPageC" prefHeight="50.0" prefWidth="133.0" style="-fx-background-color: 250, 250, 255, 0.7;" styleClass="button1" stylesheets="@style.css" text="Sign In" textFill="#2c1eeb" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignUpPageC" prefHeight="50.0" prefWidth="133.0" style="-fx-background-color: 250, 250, 255, 0.7;" styleClass="button2" stylesheets="@style.css" text="Sign Up" textFill="#2c1eeb" />
                      </children>
                   </HBox>
                   <VBox alignment="CENTER" prefHeight="64.0" prefWidth="1444.0">
