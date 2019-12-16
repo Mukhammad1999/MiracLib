@@ -53,6 +53,7 @@ public class SignUpController {
         }
 
         if ((!loginarea.getText().isEmpty()) && (!passwordarea.getText().isEmpty()) && (!e_mailarea.getText().isEmpty())) {
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Booot_View.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
