@@ -12,6 +12,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.awt.*;
@@ -23,6 +24,8 @@ public class BookAdderController {
     ObservableList<String>genreList = FXCollections.observableArrayList("Adventure", "Novel", "Horror","Scientific", "Fantasy","Documentary");
     @FXML
     private AnchorPane anchorPane;
+    @FXML
+    private Pane paneforIMG;
     @FXML
     private TextField title;
     @FXML
@@ -53,8 +56,6 @@ private Label Infoview;
             Infoview.setText("Title: " + title.getText()+"  Genre: " + genre.getValue()+"  Author: " + author.getText()+"  Descrip: " + descr.getText());
 
         }
-
-
     }
 
     @FXML
