@@ -43,7 +43,7 @@ private Label Infoview;
 
     @FXML
     public void Back(ActionEvent event)throws IOException  {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Booot_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root1));
@@ -54,13 +54,10 @@ private Label Infoview;
 
         if((!title.getText().isEmpty()) && (!author.getText().isEmpty()) && (!year.getText().isEmpty()) && (!descr.getText().isEmpty())) {
             Infoview.setText("Title: " + title.getText()+"  Genre: " + genre.getValue()+"  Author: " + author.getText()+"  Descrip: " + descr.getText());
-
         }
     }
-
     @FXML
     public void initialize() {
-
         genre.setItems(genreList);
     }
     @FXML

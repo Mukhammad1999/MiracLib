@@ -23,11 +23,16 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="bd7e6b52-85b9-4888-8961-da62470871c9">
+        <schema name="pg_catalog" object-types="table, view" />
+        <schema name="public" object-types="table, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="bd7e6b52-85b9-4888-8961-da62470871c9">
-      <console name="Miraclib" type="STANDARD" schema="information_schema" session="Main"><![CDATA[select * from "user"]]></console>
+      <console name="Miraclib" type="STANDARD" schema="information_schema" session="Main">select * from &quot;user&quot;</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
