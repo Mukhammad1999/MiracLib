@@ -28,32 +28,27 @@ public class BootViewController  {
     public void initialize() {
         librarianFunction.setItems(functionSet);
     }
-    public void AddBook(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookAdder.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root1));
-        stage.show();
+    public void FunctionSet(ActionEvent event) throws IOException{
+        if(librarianFunction.getValue() == "Add"){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookAdder.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }
+        else if(librarianFunction.getValue() == "DisplayBooks"){
+
+        }
+        else if(librarianFunction.getValue() == "DeleteBook"){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteBookDialog.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }
     }
 
 
-    public void DisplayBook(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BootAdder.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root1));
-        stage.show();
-
-    }
-
-    public void ModifyBook(ActionEvent event)throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Modifier.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root1));
-        stage.show();
-
-    }
     @FXML
     public void DeleteBook(ActionEvent event)throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteBookDialog.fxml"));
