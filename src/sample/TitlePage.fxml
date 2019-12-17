@@ -44,8 +44,8 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="126.0" prefWidth="1444.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#SignInPageC" prefHeight="42.0" prefWidth="100.0" text="Log In" />
-                        <Button mnemonicParsing="false" onAction="#SignUpPageC" prefHeight="42.0" prefWidth="93.0" text="Sign Up" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignInPageC" prefHeight="50.0" prefWidth="133.0" style="-fx-background-color: 250, 250, 255, 0.7;" styleClass="button1" stylesheets="@style.css" text="Sign In" textFill="#2c1eeb" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignUpPageC" prefHeight="50.0" prefWidth="133.0" style="-fx-background-color: 250, 250, 255, 0.7;" styleClass="button2" stylesheets="@style.css" text="Sign Up" textFill="#2c1eeb" />
                      </children>
                   </HBox>
                </children>
