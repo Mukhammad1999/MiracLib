@@ -22,6 +22,7 @@ public class Controller implements Initializable{
     public void SignUpPageC(ActionEvent event){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUpPage.fxml"));
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("admin.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
 
 
