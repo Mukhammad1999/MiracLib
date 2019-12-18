@@ -8,7 +8,7 @@ public class DBConnection implements Runnable{
 
     private DBConnection()throws ClassNotFoundException,SQLException{
         Class.forName("com.postgres.jdbc.Driver");
-        conn=DriverManager.getConnection("jdbc:postgres://localhost/Micralib","postgres","qwerty");
+        conn=DriverManager.getConnection("jdbc:postgresql://localhost/Micralib","postgres","rahimho1499");
     }
     public Connection getConnection(){
         return conn;
