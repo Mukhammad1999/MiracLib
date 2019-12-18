@@ -2,7 +2,7 @@ package sample.dbController;
 
 import java.sql.*;
 
-public class DBConnection{
+public class DBConnection implements Runnable{
     private Connection conn;
     private static DBConnection dbConnection;
 
@@ -17,7 +17,14 @@ public class DBConnection{
         if(dbConnection==null){
             dbConnection=new DBConnection();
         }
+
         return dbConnection;
     }
 
+    @Override
+    public void run() {
+        System.out.println("Connected");
+    }
 }
+
+
