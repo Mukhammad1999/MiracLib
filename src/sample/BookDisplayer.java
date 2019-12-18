@@ -41,9 +41,7 @@ ObservableList<Book> list = FXCollections.observableArrayList();
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initcol();
         loaddata();
-
     }
-
     private void loaddata() {
         try (
                 Connection conn = DriverManager.getConnection( "jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
@@ -66,7 +64,6 @@ ObservableList<Book> list = FXCollections.observableArrayList();
         }
         tableview.getItems().setAll(list);
     }
-
     private void initcol() {
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         genreCol.setCellValueFactory(new PropertyValueFactory<>("genre"));
