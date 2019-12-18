@@ -42,21 +42,11 @@ public class AdministratorArea {
                 stage.show();
             }
             else if(librarianFunction.getValue() == "DisplayBooks"){
-                try(
-                        Connection conn = DriverManager.getConnection( "jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
-                        Statement stmt = conn.createStatement();
-                ){
-                    String strSelect = "select * from books";
-                    ResultSet rst = stmt.executeQuery(strSelect);
-                    while (rst.next()){
-                        String sbook = rst.getString("books");
-                    }
-                }
-
-
-                catch (SQLException ex){
-
-                }
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookDisplayer.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));
+                stage.show();
             }
             else if(librarianFunction.getValue() == "DeleteBook"){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteBookDialog.fxml"));
