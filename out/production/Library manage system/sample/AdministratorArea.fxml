@@ -57,6 +57,5 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Label fx:id="bookdisplay" layoutX="234.0" layoutY="184.0" prefHeight="339.0" prefWidth="337.0" />
    </children>
 </AnchorPane>

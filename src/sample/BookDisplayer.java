@@ -51,23 +51,16 @@ ObservableList<Book> list = FXCollections.observableArrayList();
         )
         {
             String strSelect = "select * from books;";
-
             ResultSet rset = stmt.executeQuery(strSelect);
             System.out.println("The records selected are:");
-
             while(rset.next()) {
                 String titlex = rset.getString("title");
-
                 String genre = rset.getString("genre");
                 String isbn = rset.getString("isbn");
                 Boolean isAvail = rset.getBoolean("isavail");
                 Integer book_count = rset.getInt("book_count");
-
                 list.add(new Book(titlex,genre,isbn,isAvail,book_count));
-
             }
-
-
         } catch(SQLException ex) {
             ex.printStackTrace();
         }
@@ -112,9 +105,5 @@ ObservableList<Book> list = FXCollections.observableArrayList();
         public int getBook_count() {
             return book_count.get();
         }
-
-
     }
-
-
 }
