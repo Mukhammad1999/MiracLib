@@ -4,20 +4,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpControllerLibr">
    <children>
-      <AnchorPane layoutY="-3.0" prefHeight="119.0" prefWidth="775.0" style="-fx-background-color: #2d279c;">
+      <AnchorPane prefHeight="119.0" prefWidth="775.0" style="-fx-background-color: #2d279c;">
          <children>
-            <Label layoutX="244.0" layoutY="33.0" text="Register New User" textFill="WHITE">
+            <Label layoutX="244.0" layoutY="33.0" text="Register New Student" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>
@@ -29,19 +27,6 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <RadioButton fx:id="StudentRadioButton" layoutX="245.0" layoutY="175.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="27.0" prefWidth="154.0" text="Student">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="AdminUserChooser" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="LibRadioButton" layoutX="430.0" layoutY="176.0" mnemonicParsing="false" onAction="#radioSelect" prefHeight="27.0" prefWidth="154.0" selected="true" text="Librarian" toggleGroup="$AdminUserChooser">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </RadioButton>
       <HBox alignment="CENTER_LEFT" layoutX="250.0" layoutY="215.0" prefHeight="45.0" prefWidth="277.0" style="-fx-background-color: FFEDED; -fx-background-radius: 5px; -fx-border-color: lightblue; -fx-border-radius: 5px; -fx-border-width: 3px;">
          <children>
             <ImageView fitHeight="27.0" fitWidth="24.0">
@@ -87,5 +72,10 @@
             <Font size="24.0" />
          </font>
       </Label>
+      <AnchorPane layoutX="606.0" layoutY="487.0" prefHeight="189.0" prefWidth="169.0">
+         <children>
+            <fx:include fx:id="StatusNotifier" source="StatusNotifier.fxml" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -16,7 +16,7 @@ public class DeleteBookDialogController {
 
     }
     public void Back(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Booot_View.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root1));

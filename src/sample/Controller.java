@@ -18,15 +18,7 @@ public class Controller implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
-    @FXML
-    public void SignUpPageC(ActionEvent event) throws IOException{
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUpPage.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root1));
-            stage.show();
-    }
     @FXML
     public  void SignInPageC(ActionEvent event) throws IOException {
 
@@ -34,6 +26,7 @@ public class Controller implements Initializable{
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root1));
+            stage.setTitle("Sign In");
             stage.show();
     }
 
