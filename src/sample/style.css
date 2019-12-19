@@ -1,0 +1,32 @@
+.bodybg{
+   -fx-background-image:url("/sample/Media/bg.jpg");
+   -fx-background-size:100%;
+}
+.bg{
+    -fx-background-size:100%;
+}
+
+.logo{
+    -fx-background-image:url("/sample/Media/Logo.png");
+    -fx-background-size:100%;
+}
+.color{
+   -fx-background-color:rgba(76, 112, 181, 0.7);
+}
+
+.button1{
+  -fx-border-radius:16 0 0 16;
+}
+.button-container{
+   -fx-border-radius:16 16 16 16;
+
+}
+
+.button2{
+-fx-border-radius: 0 16 16 0;
+
+}
+.cornerlabel{
+  -fx-border-radius:16;
+}
+
