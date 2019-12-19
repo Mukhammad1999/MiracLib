@@ -52,14 +52,22 @@ public class SingInController {
             forpass.setText("");
         }
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
-                // Searching through tables should be added here
+
             SignIn user = new SignIn(loginarea.getText(), passwordField.getText());
-            if(user.checkUserName() && user.checkPass()){
+
+            if(user.checkUserName()==true && user.checkPass()==true){
                 // there user will be directed further
             }
+            else if(user.checkPass()==false){
+                icons.setText("Incorrect Password");
+            }
+            else if(user.checkUserName()==false){
+                icons.setText("Incorrect ID");
+            }
 
-        }else{
-            icons.setText("The data is inconsistant");
+        }
+        else {
+            icons.setText("The data is inconsistent");
         }
     }
 
