@@ -29,7 +29,7 @@ public class User
 
                 ) {
 
-            String strSelect = ("select * from id from users where id = " + userName + ";");
+            String strSelect = ("select id from users where id = " + userName + ";");
 
             ResultSet resultSet = st.executeQuery(strSelect);
 
