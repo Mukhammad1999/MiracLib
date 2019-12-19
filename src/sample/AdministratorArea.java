@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.dbController.User;
 
@@ -19,10 +20,13 @@ import java.sql.*;
 public class AdministratorArea extends User {
         @FXML
         private ComboBox librarianFunction;
-        @FXML private Label bookdisplay;
+
+        @FXML
+         private AnchorPane anchorPane;
         ObservableList<String> functionSet = FXCollections.observableArrayList("AddBook","DisplayBooks", "ModifyBook","DeleteBook","DeleteStudent");
 
-    public AdministratorArea(String userName, String password) {
+
+   public AdministratorArea( String userName, String password) {
         super(userName, password);
     }
 

@@ -57,6 +57,6 @@
             <Button layoutX="23.0" layoutY="7.0" mnemonicParsing="false" onAction="#BackButton" prefHeight="46.0" prefWidth="116.0" style="-fx-background-color: white;" text="LOGOUT" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="-1.0" layoutY="61.0" prefHeight="843.0" prefWidth="1172.0" />
+      <AnchorPane fx:id="anchorPane" layoutX="-1.0" layoutY="61.0" prefHeight="843.0" prefWidth="1172.0" />
    </children>
 </AnchorPane>
