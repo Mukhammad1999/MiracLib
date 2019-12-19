@@ -1,23 +1,65 @@
 package sample.dbController;
 
+import com.sun.glass.ui.Window;
+
 import java.sql.*;
 
-public class DBConnection{
+public class DBConnection {
     private Connection conn;
     private static DBConnection dbConnection;
+    private static Statement statement;
 
-    private DBConnection()throws ClassNotFoundException,SQLException{
-        Class.forName("com.postgres.jdbc.Driver");
-        conn=DriverManager.getConnection("jdbc:postgres://localhost/Micralib","postgres","qwerty");
+    public DBConnection() {
+        createconnection();
     }
-    public Connection getConnection(){
+    public void createconnection(){
+        try {
+            Class.forName("com.postgres.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
+        }
+
+        catch(ClassNotFoundException ex){
+        }
+        catch (SQLException sql){
+
+        }
+    }
+
+    public Connection getConnection() {
         return conn;
     }
-    public static DBConnection getDBConnection()throws ClassNotFoundException,SQLException{
-        if(dbConnection==null){
-            dbConnection=new DBConnection();
+
+
+    public Boolean executeAction(String qu){
+        try {
+            statement = conn.createStatement();
+            statement.execute(qu);
+            return true;
+        }catch (SQLException ex){
+            return false;
+        }finally {
+
         }
-        return dbConnection;
+
+    }
+    public ResultSet executeQuery(String qu){
+        ResultSet resultSet;
+        try {
+            statement = conn.createStatement();
+            resultSet = statement.executeQuery(qu);
+        }
+        catch (SQLException ex){
+            return null;
+        }
+        finally {
+
+        }
+        return resultSet;
+
     }
 
 }
+
+
+
+

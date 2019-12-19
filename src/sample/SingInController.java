@@ -13,6 +13,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class SingInController {
@@ -30,6 +34,7 @@ public class SingInController {
     private Label icons;
     @FXML
     public void SignIn(ActionEvent event) throws IOException {
+
         String login = loginarea.getText();
         String password = passwordField.getText();
 
@@ -56,7 +61,12 @@ public class SingInController {
             stage.setTitle("Sign In");
             stage.show();}
             if((loginarea.getText().equals(AdminL))&&(passwordField.getText().equals(AdminPass))){
-                icons.setText("Admins are not created yet");
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root1));
+                stage.setTitle("Sign In");
+                stage.show();
             }else{
                 icons.setText("You shall not pass!");
             }
