@@ -3,21 +3,14 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 
+
+import sample.dbController.User;
 
 public class SingInController {
     @FXML
@@ -50,9 +43,22 @@ public class SingInController {
             forpass.setText("");
         }
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
-                // Searching through tables should be added here
-        }else{
-            icons.setText("The data is inconsistant");
+
+            User user = new User(loginarea.getText(), passwordField.getText());
+
+            if(user.checkUserName()==true && user.checkPass()==true){
+                // there user will be directed further
+            }
+            else if(user.checkPass()==false){
+                icons.setText("Incorrect Password");
+            }
+            else if(user.checkUserName()==false){
+                icons.setText("Incorrect ID");
+            }
+
+        }
+        else {
+            icons.setText("The data is inconsistent");
         }
     }
 

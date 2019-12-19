@@ -11,16 +11,22 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import sample.dbController.User;
 
 import java.io.IOException;
 import java.sql.*;
 
-public class AdministratorArea {
+public class AdministratorArea extends User {
         @FXML
         private ComboBox librarianFunction;
         @FXML private Label bookdisplay;
         ObservableList<String> functionSet = FXCollections.observableArrayList("AddBook","DisplayBooks", "ModifyBook","DeleteBook","DeleteStudent");
-        @FXML
+
+    public AdministratorArea(String userName, String password) {
+        super(userName, password);
+    }
+
+    @FXML
         public void AddUser(ActionEvent event)throws IOException {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUpPage.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
