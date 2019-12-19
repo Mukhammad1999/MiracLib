@@ -31,5 +31,12 @@ public class BookFunctionsChecker {
         stage.setScene(new Scene(root1));
         stage.show();
     }
+    public void Modify(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Modifier.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
 
 }
