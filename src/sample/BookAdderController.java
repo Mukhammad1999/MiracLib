@@ -50,11 +50,8 @@ private TextField bookid;
     @FXML
 
     public void Back(ActionEvent event)throws IOException  {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root1));
-        stage.show();
+        System.out.println("Cannot go back!");
+
     }
     @FXML
     public void Accept(ActionEvent event){
