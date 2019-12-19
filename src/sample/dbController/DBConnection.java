@@ -8,6 +8,8 @@ public class DBConnection {
     private Connection conn;
     private static DBConnection dbConnection;
     private static Statement statement;
+    private  String query;
+
 
     public DBConnection() {
         createconnection();
@@ -24,6 +26,12 @@ public class DBConnection {
 
         }
     }
+
+    public ResultSet select(String s) throws SQLException {
+        ResultSet rset =  statement.executeQuery(s);
+        return rset;
+    }
+
 
     public Connection getConnection() {
         return conn;
@@ -57,6 +65,9 @@ public class DBConnection {
         return resultSet;
 
     }
+
+
+
 
 }
 

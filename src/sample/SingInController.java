@@ -3,27 +3,18 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 
+
+import sample.dbController.User;
 
 public class SingInController {
     @FXML
     private TextField loginarea;
-    private String loginL = "LU1810128";private String pass = "whiteblack";
-    private String AdminL = "AU1810128";private String AdminPass = "whiteblack";
     @FXML
     private PasswordField passwordField;
     @FXML
@@ -53,35 +44,25 @@ public class SingInController {
         }
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
 
-            if((loginarea.getText().equals(loginL))&&(passwordField.getText().equals(pass))){
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root1));
-            stage.setTitle("Sign In");
-            stage.show();}
-            if((loginarea.getText().equals(AdminL))&&(passwordField.getText().equals(AdminPass))){
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(new Scene(root1));
-                stage.setTitle("Sign In");
-                stage.show();
-            }else{
-                icons.setText("You shall not pass!");
+            User user = new User(loginarea.getText(), passwordField.getText());
+
+            if(user.checkUserName()==true && user.checkPass()==true){
+                // there user will be directed further
             }
-        }else{
-            icons.setText("The data is inconsistant");
+            else if(user.checkPass()==false){
+                icons.setText("Incorrect Password");
+            }
+            else if(user.checkUserName()==false){
+                icons.setText("Incorrect ID");
+            }
+
+        }
+        else {
+            icons.setText("The data is inconsistent");
         }
     }
 
     public void BackButt(ActionEvent event)throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TitlePage.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root1));
-        stage.setTitle("Title");
-        stage.show();
 
     }
 }
