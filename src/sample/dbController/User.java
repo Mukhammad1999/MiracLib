@@ -6,13 +6,13 @@ import sample.dbController.DBConnection;
 
 
 // JDK 1.7 and above
-public class SignIn
+public class User
 {
     DBConnection dbConnection;
-    private  String userName;
+    protected   String userName;
     private  String password;
 
-    public SignIn(String userName, String password) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
