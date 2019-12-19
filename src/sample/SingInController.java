@@ -19,6 +19,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
+import sample.dbController.SignIn;
+
 public class SingInController {
     @FXML
     private TextField loginarea;
@@ -51,6 +53,11 @@ public class SingInController {
         }
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
                 // Searching through tables should be added here
+            SignIn user = new SignIn(loginarea.getText(), passwordField.getText());
+            if(user.checkUserName() && user.checkPass()){
+                // there user will be directed further
+            }
+
         }else{
             icons.setText("The data is inconsistant");
         }
