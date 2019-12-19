@@ -5,13 +5,12 @@ import com.sun.glass.ui.Window;
 import java.sql.*;
 
 public class DBConnection {
-    private Connection conn = null;
+    private Connection conn;
     private static DBConnection dbConnection;
-    private static Statement statement =null;
+    private static Statement statement;
 
     public DBConnection() {
         createconnection();
-
     }
     public void createconnection(){
         try {
@@ -29,6 +28,8 @@ public class DBConnection {
     public Connection getConnection() {
         return conn;
     }
+
+
     public Boolean executeAction(String qu){
         try {
             statement = conn.createStatement();

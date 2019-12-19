@@ -30,6 +30,7 @@ CREATE TABLE public.books (
 -- Dumping data for table 'books'
 
 
+
 insert into public.books (id, title, genre, isbn, whom_added_id, image ) values (1, 'Babysitter Wanted', 'Horror|Thriller', '154459012,1', 'Dell', 'http://dummyimage.com/233x193.png/5fa2dd/ffffff');
 insert into public.books (id, title, genre, isbn, whom_added_id, image ) values (2, 'Secret Policeman''s Other Ball, The', 'Comedy|Documentary|Musical', '429856125,9', 'Rennie', 'http://dummyimage.com/120x145.png/5fa2dd/ffffff');
 insert into public.books (id, title, genre, isbn, whom_added_id, image ) values (3, 'Resident Evil: Damnation', 'Action|Animation|Horror', '099796089,2', 'Lianne', 'http://dummyimage.com/167x102.bmp/dddddd/000000');
@@ -60,7 +61,6 @@ insert into public.books (id, title, genre, isbn, whom_added_id, image ) values 
 insert into public.books (id, title, genre, isbn, whom_added_id, image ) values (28, 'Girl in the Red Velvet Swing, The', 'Crime|Drama|Romance', '591675728,X', 'Bone', 'http://dummyimage.com/249x125.jpg/cc0000/ffffff');
 insert into public.books (id, title, genre, isbn, whom_added_id, image ) values (29, 'Amorosa', 'Drama', '714283085,9', 'Kerrill', 'http://dummyimage.com/171x247.png/dddddd/000000');
 insert into public.books (id, title, genre, isbn, whom_added_id, image ) values (30, 'Noose, The (Petla)', 'Drama', '453006380,1', 'Aldridge', 'http://dummyimage.com/186x128.jpg/5fa2dd/ffffff');
-
 
 
 

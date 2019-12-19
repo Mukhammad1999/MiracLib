@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.glass.ui.Window;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +24,8 @@ import sample.dbController.DBConnection;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.ConnectException;
+import java.sql.*;
 
 
 public class BookAdderController {
@@ -41,11 +44,11 @@ private TextField bookid;
     @FXML
     private  TextField descr;
     @FXML Label info;
-@FXML
-private ComboBox genre;
-DBConnection dbConnection;
-
     @FXML
+    private ComboBox genre;
+    Connection conn;
+    @FXML
+
     public void Back(ActionEvent event)throws IOException  {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
@@ -55,6 +58,8 @@ DBConnection dbConnection;
     }
     @FXML
     public void Accept(ActionEvent event){
+
+
         Integer dbbookid = Integer.parseInt(bookid.getText());
         String dbtitle = title.getText();
         String dbgenre = (String)genre.getValue();
@@ -63,33 +68,26 @@ DBConnection dbConnection;
         Boolean dbisavail = true;
 
 
-        if((!title.getText().isEmpty()) && (!bookid.getText().isEmpty()) && (!book_count.getText().isEmpty()) && (!isbn.getText().isEmpty())&&(!genre.getItems().isEmpty())) {
-            String qu = "INSERT INTO public.books(id,title,genre,isbn,isavail,book_count)"+
-               "VALUES("+
-                    "'"+ dbbookid+"',"
-                    +"'"+ dbtitle+"',"
-                    +"'"+ dbgenre+"',"
-                    +"'"+ dbisbn+"',"
-                    +"'"+ true+"',"
-                    +"'"+ dbbookcount+"'"
-                   + ")";
-            if(dbConnection.executeAction(qu)){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        try {
+            // "INSERT INTO books (title, genre, isbn, isavail, book_count) VALUES (?,?,?,?,?)"
 
-                alert.setContentText("Succes");
-                alert.showAndWait();
-            }else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-
-                alert.setContentText("Failure");
-                alert.showAndWait();
-
-            }
-
+            conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
+            Statement statement = conn.createStatement();
+            statement.execute(String.format("INSERT INTO books (id,title, genre, isbn, isavail, book_count) VALUES (%d,'%s','%s','%s',%B, %d)",31,dbtitle,dbgenre,dbisbn,dbisavail,dbbookcount));
         }
-        else{
 
+        catch (Exception sql){
+            sql.printStackTrace();
         }
+
+
+
+
+
+
+
+
+
     }
     @FXML
     public void initialize() {

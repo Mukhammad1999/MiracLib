@@ -76,16 +76,17 @@
       </Button>
       <AnchorPane layoutX="393.0" layoutY="223.0" prefHeight="472.0" prefWidth="382.0">
          <children>
-            <ImageView fitHeight="276.0" fitWidth="347.0" layoutX="26.0" layoutY="180.0">
+            <ImageView fitHeight="276.0" fitWidth="347.0" layoutX="22.0" layoutY="196.0">
                <image>
                   <Image url="@icons/Untitled-3%201.png" />
                </image>
             </ImageView>
             <AnchorPane fx:id="anchorPane" layoutX="91.0" layoutY="22.0" prefHeight="200.0" prefWidth="208.0">
                <children>
-                  <VBox layoutX="54.0" layoutY="14.0" prefHeight="214.0" prefWidth="208.0" styleClass="bg" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <VBox layoutY="28.0" prefHeight="214.0" prefWidth="208.0" styleClass="bg" stylesheets="@style.css" AnchorPane.bottomAnchor="-28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
                </children>
             </AnchorPane>
+            <Label fx:id="info" layoutX="6.0" layoutY="6.0" prefHeight="17.0" prefWidth="529.0" text="Label" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="-4.0" prefHeight="100.0" prefWidth="775.0" style="-fx-background-color: #03c6fc;">
