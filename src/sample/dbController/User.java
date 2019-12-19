@@ -10,7 +10,7 @@ public class User
 {
     DBConnection dbConnection;
     protected   String userName;
-    private  String password;
+    private     String password;
 
     public User(String userName, String password) {
         this.userName = userName;
@@ -61,7 +61,7 @@ public class User
 
         ) {
 
-            String strSelect = ("select * from id from users where id = " + password + ";");
+            String strSelect = ("select password from users where password = " + password + ";");
 
             ResultSet resultSet = st.executeQuery(strSelect);
 
