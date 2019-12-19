@@ -27,59 +27,31 @@ public class SignUpController {
     private Label forlogin;
     @FXML
     private Label forpass;
-    @FXML
-    private Label foremal;
+
     @FXML
     private Label incons;
 
     public void SignUpBut(ActionEvent event) throws IOException {
+        String login = loginarea.getText();//this variable to be passed in tables
+        String password = passwordarea.getText();//this variable to be passed in tables
 
-        String login = loginarea.getText();
-        String password = passwordarea.getText();
-        String email = e_mailarea.getText();
         if(loginarea.getText().isEmpty()) {
             forlogin.setText("The Login area cannot be empty");
-            login= loginarea.getText();
-        }else{
-            forlogin.setText("");
         }
         if(passwordarea.getText().isEmpty()){
             forpass.setText("Password area cannot be empty");
-            password = passwordarea.getText();
         }
-        else{
-            forpass.setText("");
-        }
-        if(e_mailarea.getText().isEmpty()){
-            foremal.setText("Email area cannot be empty");
-            email = e_mailarea.getText();
-        }else{
-            foremal.setText("");
-        }
+
 
         if ((!loginarea.getText().isEmpty()) && (!passwordarea.getText().isEmpty()) && (!e_mailarea.getText().isEmpty())) {
-
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root1));
-            stage.show();
+            //logic for adding person to be here
+            //A and L firstletters should be for Librarian and Administrator
+            //S for students
         }else{
             incons.setText("The data is inconsistant");
-
-        }
-
-    }
-
-    public void radioSelect(ActionEvent event){
-        String radiobuttonflag;
-        if(StudentRadioButton.isSelected()){
-            radiobuttonflag = StudentRadioButton.getText();
-            incons.setText(radiobuttonflag);
-        }
-        if(LibRaioButton.isSelected()){
-            radiobuttonflag =LibRaioButton.getText();
-            incons.setText(radiobuttonflag);
         }
     }
+
+
+
 }

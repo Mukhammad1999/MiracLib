@@ -31,13 +31,12 @@ public class AdministratorArea {
         }
         public void initialize() {
             librarianFunction.setItems(functionSet);
-
         }
         public void FunctionSet(ActionEvent event) throws IOException{
             if(librarianFunction.getValue() == "AddBook"){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookAdder.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                Stage stage = new Stage();
                 stage.setScene(new Scene(root1));
                 stage.show();
             }
@@ -51,17 +50,14 @@ public class AdministratorArea {
             else if(librarianFunction.getValue() == "DeleteBook"){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteBookDialog.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                Stage stage = new Stage();
                 stage.setScene(new Scene(root1));
                 stage.show();
             }
         }
         public void BackButton(ActionEvent event) throws IOException{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignInPage.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root1));
-            stage.show();
+
+
 
         }
 
