@@ -18,6 +18,37 @@ public class User
     }
 
 
+    public boolean is_admin(){
+        Boolean isAdmin = false;
+        try(
+                Connection co = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
+
+                Statement st = co.createStatement();
+
+        ) {
+
+
+            String strSelect = ("SELECT * FROM users WHERE id like \"427215%\" AND is_admin=true;");
+            ResultSet resultSet = st.executeQuery(strSelect);
+
+            resultSet.getString("id");
+
+            if(resultSet.getString("id") == this.userName){
+                isAdmin = true;
+            }
+            else{
+                isAdmin = false;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return isAdmin;
+
+    }
+
+
     public boolean checkUserName() {
 
         Boolean isTrue = false;
@@ -56,17 +87,12 @@ public class User
 
         try(
                 Connection co = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
-
                 Statement st = co.createStatement();
-
         ) {
 
             String strSelect = ("select * from id from users where id = " + password + ";");
-
             ResultSet resultSet = st.executeQuery(strSelect);
-
             resultSet.getString("password");
-
             if(resultSet.getString("password") == this.password){
                 isTrue = true;
             }
@@ -76,7 +102,6 @@ public class User
 
         } catch (SQLException e) {
             e.printStackTrace();
-
         }
         return isTrue;
     }
@@ -90,7 +115,6 @@ public class User
     public String getUserName() {
         return userName;
     }
-
     public String getPassword() {
         return password;
     }

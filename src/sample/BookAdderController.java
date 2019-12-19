@@ -55,8 +55,6 @@ private TextField bookid;
     }
     @FXML
     public void Accept(ActionEvent event){
-
-
         Integer dbbookid = Integer.parseInt(bookid.getText());
         String dbtitle = title.getText();
         String dbgenre = (String)genre.getValue();
@@ -66,8 +64,6 @@ private TextField bookid;
 
 
         try {
-            // "INSERT INTO books (title, genre, isbn, isavail, book_count) VALUES (?,?,?,?,?)"
-
             conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
             Statement statement = conn.createStatement();
             statement.execute(String.format("INSERT INTO books (id,title, genre, isbn, isavail, book_count) VALUES (%d,'%s','%s','%s',%B, %d)",31,dbtitle,dbgenre,dbisbn,dbisavail,dbbookcount));
@@ -76,15 +72,6 @@ private TextField bookid;
         catch (Exception sql){
             sql.printStackTrace();
         }
-
-
-
-
-
-
-
-
-
     }
     @FXML
     public void initialize() {
