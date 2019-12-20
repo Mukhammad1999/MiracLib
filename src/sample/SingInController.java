@@ -49,10 +49,12 @@ public class SingInController  {
             forpass.setText("");
         }
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
+            System.out.println("Wow");
 
             User user = new User(loginarea.getText(), passwordField.getText());
 
-            if(user.checkUserName()==true && user.checkPass()==true && user.is_admin()==true){
+            if(user.checkUserName()==true /*&& user.checkPass()==true*/ ){
+                System.out.println("Cow");
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -60,18 +62,18 @@ public class SingInController  {
                 stage.show();
 
             }
-            else if(user.checkPass()==false){
+            /*else if(user.checkPass()==false){
                 icons.setText("Incorrect Password");
-            }
+            }*/
             else if(user.checkUserName()==false){
                 icons.setText("Incorrect ID");
-            }else if(user.checkUserName()==true && user.checkPass()==true && user.is_admin()==false){
+            }/*else if(user.checkUserName()==true && user.checkPass()==true ){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Librarian.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root1));
                 stage.show();
-            }
+            }*/
 
         }
         else {

@@ -13,10 +13,7 @@ import sample.dbController.DBConnection;
 
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class  BookModifierController {
     @FXML
@@ -29,7 +26,7 @@ public class  BookModifierController {
     private TextField isbn;
     @FXML
     private TextField book_count;
-    String title_to_find;
+    Integer id_to_find;
 
 
     public BookModifierController() throws IOException {
@@ -40,8 +37,8 @@ public class  BookModifierController {
 
     }
     public void Modify(ActionEvent event) throws IOException{
-       title_to_find= forPOP.getText();
-       System.out.println(title_to_find);
+        id_to_find= Integer.parseInt(forPOP.getText());
+       System.out.println(id_to_find);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Modifier.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
@@ -51,26 +48,25 @@ public class  BookModifierController {
         stage.show();
     }
     public void Submit(ActionEvent event){
-            try{
-
-                String title_to_changed = title.getText();
-                String genre_to_changed = genre.getText();
-                String isbn_to_changed = isbn.getText();
-                Integer book_count_to_changed = Integer.parseInt(book_count.getText());
-                 Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
-                 Statement stm = conn.createStatement();
-                 stm.executeUpdate("UPDATE books set title = "+title_to_changed+" where title = "+title_to_find+";");
-            }
-            catch ( SQLException ex){
-
-            }
+        String sql ="UPDATE books"
+                +"SET title =? "
+                +"WHERE id = ?";
+        String title_to_changed = title.getText();
+        String genre_to_changed = genre.getText();
+        String isbn_to_changed = isbn.getText();
 
 
+        try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, title_to_changed);
+            pstmt.setInt(2, id_to_find);
+            pstmt.executeQuery();
 
 
-
-
-
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 

@@ -10,15 +10,16 @@ public class User
 {
     DBConnection dbConnection;
     protected   String userName;
-    private     String password;
+    private     String pasSword;
 
     public User(String userName, String password) {
         this.userName = userName;
-        this.password = password;
+        this.pasSword = password;
+        System.out.println("Sas");
     }
     public User(){
         this.userName = "";
-        this.password = "";
+        this.pasSword = "";
     }
 
 
@@ -64,16 +65,18 @@ public class User
 
                 ) {
 
-            String strSelect = ("select id from users where id = " + userName + ";");
+            String strSelect = ("select id from users where id = " + this.userName + ";");
 
             ResultSet resultSet = st.executeQuery(strSelect);
 
             resultSet.getString("id");
 
             if(resultSet.getString("id") == this.userName){
+                System.out.println("User is true");
                 isTrue = true;
             }
             else{
+                System.out.println("User is false");
                 isTrue = false;
             }
 
@@ -85,7 +88,7 @@ public class User
     }
 
 
-    public boolean checkPass() {
+  /*  public boolean checkPass() {
 
         Boolean isTrue = false;
 
@@ -94,14 +97,16 @@ public class User
                 Statement st = co.createStatement();
         ) {
 
-            String strSelect = ("select password from users where password = " + password + ";");
+            String strSelect = ("select password from users where password = " + this.pasSword + ";");
 
             ResultSet resultSet = st.executeQuery(strSelect);
             resultSet.getString("password");
-            if(resultSet.getString("password") == this.password){
+            if(resultSet.getString("password") == this.pasSword){
+                System.out.println("Pass is true");
                 isTrue = true;
             }
             else{
+                System.out.println("Pass is false");
                 isTrue = false;
             }
 
@@ -109,7 +114,7 @@ public class User
             e.printStackTrace();
         }
         return isTrue;
-    }
+    }*/
 
 
     
@@ -121,7 +126,7 @@ public class User
         return userName;
     }
     public String getPassword() {
-        return password;
+        return pasSword;
     }
 
 }

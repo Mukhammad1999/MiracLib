@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class BookFunctionsChecker {
+    BookInfo bk = new BookInfo();
     @FXML
     public void Add(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookAdder.fxml"));

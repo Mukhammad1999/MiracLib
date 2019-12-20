@@ -1,14 +1,17 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ResourceBundle;
 
-public class BookInfo extends BookDisplayer{
+public class BookInfo  implements Initializable {
     @FXML
     private Label fortitle;
     @FXML
@@ -21,15 +24,17 @@ public class BookInfo extends BookDisplayer{
     private Label forisavail;
 
 
-    public void initialize(){
-        loaddata();
-
-    }
 
     private void loaddata() {
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
             Statement statement = conn.createStatement();
+            ResultSet rset = statement.executeQuery("SELECT title from books where title = 'Harry';");
+            while(rset.next()){
+                fortitle.setText(rset.getString("title"));
+            }
+
+            System.out.println("Kakaxa");
         }
 
 
@@ -39,4 +44,8 @@ public class BookInfo extends BookDisplayer{
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loaddata();
+    }
 }
