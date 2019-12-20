@@ -29,7 +29,7 @@ public class SignUpController<idd> {
     @FXML
     private Label forpass;
     @FXML
-
+    private String is_admin;
     private Label incons;
     Connection conn;
     String idd;
@@ -43,10 +43,6 @@ public class SignUpController<idd> {
         if(passwordarea.getText().isEmpty()){
             forpass.setText("Password area cannot be empty");
         }
-
-
-
-
         if ((!loginarea.getText().isEmpty()) && (!passwordarea.getText().isEmpty()) /*&& (!e_mailarea.getText().isEmpty())*/) {
             //logic for adding person to be here
             //A and L firstletters should be for Librarian and Administrator
@@ -62,6 +58,17 @@ public class SignUpController<idd> {
 //            incons.setText("The data is inconsistant");
         }
     }
+    //Add you logic here
+    public boolean SignUpRadioButtonSelected(){
+        if(StudentRadioButton.getText() == "librarian"){
+            return false;
+        }
+        else{
+
+            return true;
+        }
+    }
+
 
 
 
