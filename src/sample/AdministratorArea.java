@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sample.dbController.User;
 
@@ -19,11 +20,22 @@ import java.sql.*;
 public class AdministratorArea extends User {
         @FXML
         private ComboBox librarianFunction;
-        @FXML private Label bookdisplay;
+        private String userName, password;
+
+        @FXML
+         private AnchorPane anchorPane;
         ObservableList<String> functionSet = FXCollections.observableArrayList("AddBook","DisplayBooks", "ModifyBook","DeleteBook","DeleteStudent");
 
-    public AdministratorArea(String userName, String password) {
-        super(userName, password);
+   public AdministratorArea(){
+
+       this.userName = "AU1810128";
+       this.password = "whiteblack";
+   }
+   public AdministratorArea( String userName, String password) {
+       super(userName, password);
+       this.userName = userName;
+       this.password = password;
+
     }
 
     @FXML
@@ -55,6 +67,12 @@ public class AdministratorArea extends User {
             }
             else if(librarianFunction.getValue() == "DeleteBook"){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteBookDialog.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));
+                stage.show();
+            }else if(librarianFunction.getValue() == "Modify"){
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ModigyPOP.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root1));

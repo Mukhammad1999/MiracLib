@@ -12,7 +12,7 @@
     <database id="3" parent="1" name="Micralib">
       <ObjectId>16588</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>618</IntrospectionStateNumber>
+      <IntrospectionStateNumber>629</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|16629|16631|1
 </Relations>
@@ -121,7 +121,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>276</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>619</IntrospectionStateNumber>
+      <IntrospectionStateNumber>630</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -330,32 +330,26 @@
       <StateNumber>549</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="55" parent="38" name="admin">
+    <column id="55" parent="38" name="is_admin">
       <Position>7</Position>
       <DataType>boolean|0s</DataType>
-      <StateNumber>573</StateNumber>
+      <StateNumber>628</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="56" parent="38" name="librarian">
-      <Position>8</Position>
-      <DataType>boolean|0s</DataType>
-      <StateNumber>574</StateNumber>
-      <TypeId>16</TypeId>
-    </column>
-    <column id="57" parent="38" name="isactive">
+    <column id="56" parent="38" name="isactive">
       <Position>11</Position>
       <DataType>boolean|0s</DataType>
       <StateNumber>611</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="58" parent="38" name="users_pkey">
+    <index id="57" parent="38" name="users_pkey">
       <ObjectId>16654</ObjectId>
       <StateNumber>549</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="59" parent="38" name="users_pkey">
+    <key id="58" parent="38" name="users_pkey">
       <ObjectId>16655</ObjectId>
       <StateNumber>549</StateNumber>
       <ColNames>id</ColNames>

@@ -3,6 +3,10 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -10,9 +14,10 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 
+import javafx.stage.Stage;
 import sample.dbController.User;
 
-public class SingInController {
+public class SingInController  {
     @FXML
     private TextField loginarea;
     @FXML
@@ -25,6 +30,7 @@ public class SingInController {
     private Label icons;
     @FXML
     public void SignIn(ActionEvent event) throws IOException {
+
 
         String login = loginarea.getText();
         String password = passwordField.getText();
@@ -46,14 +52,25 @@ public class SingInController {
 
             User user = new User(loginarea.getText(), passwordField.getText());
 
-            if(user.checkUserName()==true && user.checkPass()==true){
-                // there user will be directed further
+            if(user.checkUserName()==true && user.checkPass()==true && user.is_admin()==true){
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root1));
+                stage.show();
+
             }
             else if(user.checkPass()==false){
                 icons.setText("Incorrect Password");
             }
             else if(user.checkUserName()==false){
                 icons.setText("Incorrect ID");
+            }else if(user.checkUserName()==true && user.checkPass()==true && user.is_admin()==false){
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Librarian.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root1));
+                stage.show();
             }
 
         }

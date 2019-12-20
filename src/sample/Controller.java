@@ -29,5 +29,14 @@ public class Controller implements Initializable{
             stage.setTitle("Sign In");
             stage.show();
     }
+    public void admin(ActionEvent event)throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+
+    }
+
 
 }

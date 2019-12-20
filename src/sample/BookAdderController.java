@@ -32,7 +32,6 @@ public class BookAdderController {
     ObservableList<String>genreList = FXCollections.observableArrayList("Adventure", "Novel", "Horror","Scientific", "Fantasy","Documentary");
     @FXML
     private AnchorPane anchorPane;
-
     @FXML
     private TextField title;
     @FXML
@@ -55,8 +54,6 @@ private TextField bookid;
     }
     @FXML
     public void Accept(ActionEvent event){
-
-
         Integer dbbookid = Integer.parseInt(bookid.getText());
         String dbtitle = title.getText();
         String dbgenre = (String)genre.getValue();
@@ -66,25 +63,14 @@ private TextField bookid;
 
 
         try {
-            // "INSERT INTO books (title, genre, isbn, isavail, book_count) VALUES (?,?,?,?,?)"
-
             conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
             Statement statement = conn.createStatement();
-            statement.execute(String.format("INSERT INTO books (id,title, genre, isbn, isavail, book_count) VALUES (%d,'%s','%s','%s',%B, %d)",31,dbtitle,dbgenre,dbisbn,dbisavail,dbbookcount));
+            statement.execute(String.format("INSERT INTO books (id,title, genre, isbn, isavail, book_count) VALUES (%d,'%s','%s','%s',%B, %d)",dbbookid,dbtitle,dbgenre,dbisbn,dbisavail,dbbookcount));
         }
 
         catch (Exception sql){
             sql.printStackTrace();
         }
-
-
-
-
-
-
-
-
-
     }
     @FXML
     public void initialize() {
