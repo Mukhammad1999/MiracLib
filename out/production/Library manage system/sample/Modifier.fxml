@@ -45,7 +45,7 @@
             <TextField fx:id="genre" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="isbn" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="book_count" prefHeight="25.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label prefHeight="38.0" prefWidth="177.0" text="ID to be Changed">
+            <Label prefHeight="38.0" prefWidth="198.0" text="ID of modifiable book">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

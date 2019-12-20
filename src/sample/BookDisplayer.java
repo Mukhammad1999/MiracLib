@@ -83,7 +83,12 @@ ObservableList<Book> list = FXCollections.observableArrayList();
             private final SimpleStringProperty isbn;
             private final SimpleBooleanProperty isavail;
             private final SimpleIntegerProperty book_count;
-            private final SimpleIntegerProperty id;
+
+
+
+
+
+        private final SimpleIntegerProperty id;
 
         public Book(String title, String genre, String isbn, Boolean isavail, Integer book_count, Integer id) {
             this.title = new SimpleStringProperty(title);
@@ -108,5 +113,6 @@ ObservableList<Book> list = FXCollections.observableArrayList();
         public int getBook_count() {
             return book_count.get();
         }
+        public int getId() {return id.get();}
     }
 }
