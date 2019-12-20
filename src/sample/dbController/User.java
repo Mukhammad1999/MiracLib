@@ -16,9 +16,13 @@ public class User
         this.userName = userName;
         this.password = password;
     }
+    public User(){
+        this.userName = "";
+        this.password = "";
+    }
 
 
-    public boolean is_admin(){
+   /* public boolean is_admin(){
         Boolean isAdmin = false;
         try(
                 Connection co = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
@@ -46,7 +50,7 @@ public class User
         }
         return isAdmin;
 
-    }
+    }*/
 
 
     public boolean checkUserName() {

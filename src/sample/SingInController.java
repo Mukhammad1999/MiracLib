@@ -17,7 +17,7 @@ import java.io.IOException;
 import javafx.stage.Stage;
 import sample.dbController.User;
 
-public class SingInController {
+public class SingInController  {
     @FXML
     private TextField loginarea;
     @FXML
@@ -30,6 +30,7 @@ public class SingInController {
     private Label icons;
     @FXML
     public void SignIn(ActionEvent event) throws IOException {
+
 
         String login = loginarea.getText();
         String password = passwordField.getText();

@@ -29,21 +29,19 @@ public class  BookModifierController {
     private TextField isbn;
     @FXML
     private TextField book_count;
-    String title_to_find = forPOP.getText();
-    String title_to_changed = title.getText();
-    String genre_to_changed = genre.getText();
-    String isbn_to_changed = isbn.getText();
-    Integer book_count_to_changed = Integer.parseInt(book_count.getText());
+    String title_to_find;
+
 
     public BookModifierController() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ModifyPOP.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));
-        stage.setTitle("Enter title of modifiable book");
-        stage.show();
+        getModifyPop();
+
+    }
+    public void  getModifyPop() throws IOException{
+
     }
     public void Modify(ActionEvent event) throws IOException{
+       title_to_find= forPOP.getText();
+       System.out.println(title_to_find);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Modifier.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
@@ -54,9 +52,14 @@ public class  BookModifierController {
     }
     public void Submit(ActionEvent event){
             try{
+
+                String title_to_changed = title.getText();
+                String genre_to_changed = genre.getText();
+                String isbn_to_changed = isbn.getText();
+                Integer book_count_to_changed = Integer.parseInt(book_count.getText());
                  Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
                  Statement stm = conn.createStatement();
-                 stm.executeUpdate("UPDATE books set title =+ '"+this.title_to_changed+"'+ where title = +'"+this.title_to_find+"'");
+                 stm.executeUpdate("UPDATE books set title = "+title_to_changed+" where title = "+title_to_find+";");
             }
             catch ( SQLException ex){
 
