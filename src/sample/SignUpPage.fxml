@@ -66,12 +66,12 @@
       <Button layoutX="326.0" layoutY="423.0" mnemonicParsing="false" onAction="#SignUpBut" prefHeight="70.0" prefWidth="141.0" style="-fx-background-color: #2d279c;" text="Register" textFill="WHITE" />
       <Label fx:id="forlogin" alignment="CENTER" contentDisplay="CENTER" layoutX="592.0" layoutY="219.0" prefHeight="39.0" prefWidth="154.0" textFill="RED">
          <font>
-            <Font size="24.0" />
+            <Font size="12.0" />
          </font>
       </Label>
       <Label fx:id="forpass" alignment="CENTER" contentDisplay="CENTER" layoutX="592.0" layoutY="285.0" prefHeight="39.0" prefWidth="154.0" textFill="RED">
          <font>
-            <Font size="24.0" />
+            <Font size="12.0" />
          </font>
       </Label>
       <RadioButton fx:id="studentRadioButton" layoutX="283.0" layoutY="159.0" mnemonicParsing="false" selected="true" text="Student">
@@ -80,5 +80,10 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="librarianRadioButton" layoutX="424.0" layoutY="159.0" mnemonicParsing="false" text="Librarian" toggleGroup="$AdminChooseUserSelector" />
+      <Label fx:id="forRadioButton" alignment="CENTER" contentDisplay="CENTER" layoutX="592.0" layoutY="148.0" prefHeight="39.0" prefWidth="154.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

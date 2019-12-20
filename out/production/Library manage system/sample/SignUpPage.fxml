@@ -4,7 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -70,6 +72,17 @@
       <Label fx:id="forpass" alignment="CENTER" contentDisplay="CENTER" layoutX="592.0" layoutY="285.0" prefHeight="39.0" prefWidth="154.0" textFill="RED">
          <font>
             <Font size="24.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="studentRadioButton" layoutX="283.0" layoutY="159.0" mnemonicParsing="false" selected="true" text="Student">
+         <toggleGroup>
+            <ToggleGroup fx:id="AdminChooseUserSelector" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="librarianRadioButton" layoutX="424.0" layoutY="159.0" mnemonicParsing="false" text="Librarian" toggleGroup="$AdminChooseUserSelector" />
+      <Label fx:id="forRadioButton" alignment="CENTER" contentDisplay="CENTER" layoutX="592.0" layoutY="148.0" prefHeight="39.0" prefWidth="154.0" textFill="RED">
+         <font>
+            <Font size="12.0" />
          </font>
       </Label>
    </children>

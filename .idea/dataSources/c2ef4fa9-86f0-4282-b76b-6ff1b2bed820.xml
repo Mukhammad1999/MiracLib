@@ -3,12 +3,12 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.17">
     <root id="1">
       <ServerVersion>12.1</ServerVersion>
-      <StartupTime>1576838879</StartupTime>
+      <StartupTime>1576844362</StartupTime>
     </root>
     <database id="2" parent="1" name="Micralib">
       <ObjectId>16393</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>515</IntrospectionStateNumber>
+      <IntrospectionStateNumber>542</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -65,7 +65,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>276</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>516</IntrospectionStateNumber>
+      <IntrospectionStateNumber>543</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="16" parent="2" name="heap">
@@ -134,7 +134,7 @@
     <table id="24" parent="15" name="books">
       <ObjectId>16397</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>514</StateNumber>
+      <StateNumber>519</StateNumber>
     </table>
     <table id="25" parent="15" name="student">
       <ObjectId>16400</ObjectId>
@@ -144,7 +144,7 @@
     <table id="26" parent="15" name="users">
       <ObjectId>16394</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>505</StateNumber>
+      <StateNumber>541</StateNumber>
     </table>
     <column id="27" parent="24" name="id">
       <Position>1</Position>
@@ -154,15 +154,15 @@
     </column>
     <column id="28" parent="24" name="genre">
       <Position>2</Position>
-      <DataType>varchar(1)|0s</DataType>
-      <StateNumber>510</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>text|0s</DataType>
+      <StateNumber>519</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="29" parent="24" name="isbn">
       <Position>3</Position>
-      <DataType>varchar(1)|0s</DataType>
-      <StateNumber>512</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>text|0s</DataType>
+      <StateNumber>520</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="30" parent="24" name="book_count">
       <Position>5</Position>
@@ -172,9 +172,9 @@
     </column>
     <column id="31" parent="24" name="title">
       <Position>6</Position>
-      <DataType>varchar(1)|0s</DataType>
-      <StateNumber>511</StateNumber>
-      <TypeId>1043</TypeId>
+      <DataType>text|0s</DataType>
+      <StateNumber>521</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="32" parent="24" name="isavail">
       <Position>7</Position>
@@ -214,15 +214,15 @@
     </column>
     <column id="38" parent="26" name="id">
       <Position>1</Position>
-      <DataType>char|0s</DataType>
-      <StateNumber>502</StateNumber>
-      <TypeId>1042</TypeId>
+      <DataType>text|0s</DataType>
+      <StateNumber>529</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="39" parent="26" name="password">
       <Position>2</Position>
-      <DataType>char|0s</DataType>
-      <StateNumber>503</StateNumber>
-      <TypeId>1042</TypeId>
+      <DataType>text|0s</DataType>
+      <StateNumber>533</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="40" parent="26" name="is_admin">
       <Position>3</Position>
@@ -234,6 +234,18 @@
       <Position>4</Position>
       <DataType>boolean|0s</DataType>
       <StateNumber>505</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="42" parent="26" name="is_student">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>540</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="43" parent="26" name="is_librarian">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>541</StateNumber>
       <TypeId>16</TypeId>
     </column>
   </database-model>
