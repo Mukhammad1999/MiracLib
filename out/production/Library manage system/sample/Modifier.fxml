@@ -18,32 +18,39 @@
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="223.0" />
         </columnConstraints>
         <rowConstraints>
+            <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Title">
+            <Label text="Title" GridPane.rowIndex="1">
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <Label text="Genre" GridPane.rowIndex="1">
+            <Label text="Genre" GridPane.rowIndex="2">
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <Label alignment="CENTER" text="Isbn" GridPane.rowIndex="2">
+            <Label alignment="CENTER" text="Isbn" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <Label text="Book Count" GridPane.rowIndex="3">
+            <Label text="Book Count" GridPane.rowIndex="4">
                <font>
                   <Font size="24.0" />
                </font></Label>
-            <TextField fx:id="title" GridPane.columnIndex="1" />
-            <TextField fx:id="genre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="isbn" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="book_count" prefHeight="25.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="title" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="genre" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="isbn" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="book_count" prefHeight="25.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label prefHeight="38.0" prefWidth="177.0" text="ID to be Changed">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="forID" GridPane.columnIndex="1" />
          </children>
          <cursor>
             <Cursor fx:constant="DEFAULT" />

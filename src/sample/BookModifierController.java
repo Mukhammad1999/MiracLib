@@ -17,7 +17,7 @@ import java.sql.*;
 
 public class  BookModifierController {
     @FXML
-    private TextField forPOP;
+    private TextField forID;
     @FXML
     private TextField title;
     @FXML
@@ -29,39 +29,21 @@ public class  BookModifierController {
     Integer id_to_find;
 
 
-    public BookModifierController() throws IOException {
-        getModifyPop();
 
-    }
-    public void  getModifyPop() throws IOException{
-
-    }
-    public void Modify(ActionEvent event) throws IOException{
-        id_to_find= Integer.parseInt(forPOP.getText());
-       System.out.println(id_to_find);
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Modifier.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root1));
-        stage.setTitle("Modify needed parts");
-        stage.show();
-    }
     public void Submit(ActionEvent event){
-        String sql ="UPDATE books"
-                +"SET title =? "
-                +"WHERE id = ?";
+        id_to_find= Integer.parseInt(forID.getText());
+        System.out.println(id_to_find);
         String title_to_changed = title.getText();
         String genre_to_changed = genre.getText();
         String isbn_to_changed = isbn.getText();
+        String sql ="UPDATE books set title =? where id = ?";
 
 
         try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
             pstmt.setString(1, title_to_changed);
             pstmt.setInt(2, id_to_find);
-            pstmt.executeQuery();
+            pstmt.executeUpdate();
 
 
         } catch (SQLException e) {

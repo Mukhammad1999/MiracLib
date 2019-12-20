@@ -12,10 +12,8 @@
     <database id="3" parent="1" name="Micralib">
       <ObjectId>16588</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>629</IntrospectionStateNumber>
+      <IntrospectionStateNumber>663</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|16629|16631|1
-</Relations>
       <Visible>1</Visible>
     </database>
     <database id="4" parent="1" name="pollsapp">
@@ -121,7 +119,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>276</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>630</IntrospectionStateNumber>
+      <IntrospectionStateNumber>664</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -202,154 +200,130 @@
       <Comment>system catalog schema</Comment>
       <Substituted>1</Substituted>
     </schema>
-    <sequence id="35" parent="22" name="books_id_seq">
-      <ObjectId>16629</ObjectId>
-      <StateNumber>545</StateNumber>
-      <Owner>postgres</Owner>
-      <SequenceIdentity>1</SequenceIdentity>
-      <CacheSize>1</CacheSize>
-      <DataType>bigint</DataType>
-    </sequence>
-    <table id="36" parent="22" name="books">
+    <table id="35" parent="22" name="books">
       <ObjectId>16631</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>580</StateNumber>
+      <StateNumber>661</StateNumber>
     </table>
-    <table id="37" parent="22" name="student">
+    <table id="36" parent="22" name="student">
       <ObjectId>16676</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>614</StateNumber>
     </table>
-    <table id="38" parent="22" name="users">
+    <table id="37" parent="22" name="users">
       <ObjectId>16648</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>611</StateNumber>
     </table>
-    <column id="39" parent="36" name="id">
-      <Position>1</Position>
-      <DataType>bigint|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>545</StateNumber>
-      <DefaultExpression>nextval(&apos;books_id_seq&apos;::regclass)</DefaultExpression>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="40" parent="36" name="title">
+    <column id="38" parent="35" name="title">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="41" parent="36" name="genre">
+    <column id="39" parent="35" name="genre">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="42" parent="36" name="isbn">
+    <column id="40" parent="35" name="isbn">
       <Position>4</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>545</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="43" parent="36" name="isavail">
+    <column id="41" parent="35" name="isavail">
       <Position>10</Position>
       <DataType>boolean|0s</DataType>
       <StateNumber>576</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="44" parent="36" name="book_count">
+    <column id="42" parent="35" name="book_count">
       <Position>11</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>580</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="45" parent="36" name="books_pkey">
-      <ObjectId>16638</ObjectId>
-      <StateNumber>545</StateNumber>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-    </index>
-    <key id="46" parent="36" name="books_pkey">
-      <ObjectId>16639</ObjectId>
-      <StateNumber>545</StateNumber>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>books_pkey</UnderlyingIndexName>
-    </key>
-    <column id="47" parent="37" name="id">
+    <column id="43" parent="35" name="id">
+      <Position>14</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>661</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="44" parent="36" name="id">
       <Position>1</Position>
       <DataType>char|0s</DataType>
       <StateNumber>590</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="48" parent="37" name="Overdue">
+    <column id="45" parent="36" name="Overdue">
       <Position>2</Position>
       <DataType>boolean|0s</DataType>
       <StateNumber>591</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="49" parent="37" name="borrowed_time">
+    <column id="46" parent="36" name="borrowed_time">
       <Position>3</Position>
       <DataType>time with time zone|0s</DataType>
       <StateNumber>592</StateNumber>
       <TypeId>1266</TypeId>
     </column>
-    <column id="50" parent="37" name="password">
+    <column id="47" parent="36" name="password">
       <Position>4</Position>
       <DataType>char|0s</DataType>
       <StateNumber>612</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="51" parent="37" name="taken_data">
+    <column id="48" parent="36" name="taken_data">
       <Position>5</Position>
       <DataType>time with time zone|0s</DataType>
       <StateNumber>613</StateNumber>
       <TypeId>1266</TypeId>
     </column>
-    <column id="52" parent="37" name="given_data">
+    <column id="49" parent="36" name="given_data">
       <Position>6</Position>
       <DataType>time with time zone|0s</DataType>
       <StateNumber>614</StateNumber>
       <TypeId>1266</TypeId>
     </column>
-    <column id="53" parent="38" name="id">
+    <column id="50" parent="37" name="id">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>549</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="54" parent="38" name="password">
+    <column id="51" parent="37" name="password">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>549</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="55" parent="38" name="is_admin">
+    <column id="52" parent="37" name="is_admin">
       <Position>7</Position>
       <DataType>boolean|0s</DataType>
       <StateNumber>628</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="56" parent="38" name="isactive">
+    <column id="53" parent="37" name="isactive">
       <Position>11</Position>
       <DataType>boolean|0s</DataType>
       <StateNumber>611</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="57" parent="38" name="users_pkey">
+    <index id="54" parent="37" name="users_pkey">
       <ObjectId>16654</ObjectId>
       <StateNumber>549</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="58" parent="38" name="users_pkey">
+    <key id="55" parent="37" name="users_pkey">
       <ObjectId>16655</ObjectId>
       <StateNumber>549</StateNumber>
       <ColNames>id</ColNames>

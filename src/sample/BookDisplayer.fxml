@@ -16,6 +16,7 @@
             <TableColumn fx:id="isbnCol" prefWidth="75.0" text="Isbn" />
             <TableColumn fx:id="isavailCol" prefWidth="75.0" text="IsAvail" />
             <TableColumn fx:id="bookcounCol" prefWidth="75.0" text="BookCount" />
+            <TableColumn fx:id="forid" prefWidth="75.0" text="Book Id" />
          </columns>
       </TableView>
    </children>
