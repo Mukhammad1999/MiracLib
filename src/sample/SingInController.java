@@ -52,7 +52,7 @@ public class SingInController  {
 
             User user = new User(loginarea.getText(), passwordField.getText());
 
-            if(user.checkUserName()==true && user.checkPass()==true && user.is_admin()==true){
+            if(user.checkUserName()==true && user.checkPass()==true ){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -65,7 +65,7 @@ public class SingInController  {
             }
             else if(user.checkUserName()==false){
                 icons.setText("Incorrect ID");
-            }else if(user.checkUserName()==true && user.checkPass()==true && user.is_admin()==false){
+            }else if(user.checkUserName()==true && user.checkPass()==true){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Librarian.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

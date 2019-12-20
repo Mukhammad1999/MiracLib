@@ -11,8 +11,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.sql.*;
 
-public class SignUpController {
+public class SignUpController<idd> {
     @FXML
     private RadioButton StudentRadioButton;
     @FXML
@@ -27,11 +28,12 @@ public class SignUpController {
     private Label forlogin;
     @FXML
     private Label forpass;
-
     @FXML
-    private Label incons;
 
-    public void SignUpBut(ActionEvent event) throws IOException {
+    private Label incons;
+    Connection conn;
+    String idd;
+    public void SignUpBut(ActionEvent event) throws IOException, SQLException {
         String login = loginarea.getText();//this variable to be passed in tables
         String password = passwordarea.getText();//this variable to be passed in tables
 
@@ -43,12 +45,21 @@ public class SignUpController {
         }
 
 
-        if ((!loginarea.getText().isEmpty()) && (!passwordarea.getText().isEmpty()) && (!e_mailarea.getText().isEmpty())) {
+
+
+        if ((!loginarea.getText().isEmpty()) && (!passwordarea.getText().isEmpty()) /*&& (!e_mailarea.getText().isEmpty())*/) {
             //logic for adding person to be here
             //A and L firstletters should be for Librarian and Administrator
             //S for students
+            try {
+                conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
+                Statement statement = conn.createStatement();
+                statement.execute("INSERT INTO users (id, password, is_admin, is_active) VALUES ('"+loginarea.getText()+"','"+passwordarea.getText()+"' ,true,true)");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }else{
-            incons.setText("The data is inconsistant");
+//            incons.setText("The data is inconsistant");
         }
     }
 

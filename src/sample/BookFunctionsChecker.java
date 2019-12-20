@@ -38,7 +38,7 @@ public class BookFunctionsChecker {
     }
     @FXML
     public void Modify(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ModifyPOP.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUpPage.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
