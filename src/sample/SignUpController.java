@@ -23,8 +23,7 @@ public class SignUpController<idd> {
     private TextField loginarea;
     @FXML
     private TextField passwordarea;
-    @FXML
-    private TextField e_mailarea;
+
     @FXML
     private Label forlogin;
     @FXML
@@ -45,9 +44,7 @@ public class SignUpController<idd> {
         if(passwordarea.getText().isEmpty()){
             forpass.setText("Password area cannot be empty");
         }
-        if (studentRadioButton.selectedProperty().getValue() || librarianRadioButton.selectedProperty().getValue()) {
-            forRadioButton.setText("You must choose one of this!");
-        }
+
         if ( (!loginarea.getText().isEmpty()) && (!passwordarea.getText().isEmpty()) && (studentRadioButton.selectedProperty().getValue() || librarianRadioButton.selectedProperty().getValue()) ) {
             //logic for adding person to be here
             //A and L firstletters should be for Librarian and Administrator

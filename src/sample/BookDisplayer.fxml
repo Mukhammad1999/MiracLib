@@ -11,12 +11,12 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
          <columns>
-            <TableColumn fx:id="titleCol" prefWidth="75.0" style="-fx-border-color: white; fx-text-fill: white;" text="Title" />
-            <TableColumn fx:id="genreCol" prefWidth="75.0" text="Genre" />
-            <TableColumn fx:id="isbnCol" prefWidth="75.0" style="-fx-border-color: white;" text="Isbn" />
-            <TableColumn fx:id="isavailCol" prefWidth="75.0" text="IsAvail" />
-            <TableColumn fx:id="bookcounCol" prefWidth="75.0" style="-fx-border-color: white;" text="BookCount" />
-            <TableColumn fx:id="forid" prefWidth="75.0" text="Book Id" />
+            <TableColumn fx:id="titleCol" prefWidth="75.0" style="-fx-border-color: #4a69bb; -fx-background-color: #9aceff;" text="Title" />
+            <TableColumn fx:id="genreCol" prefWidth="75.0" style="-fx-border-color: #4a69bb; -fx-background-color: #9aceff;" text="Genre" />
+            <TableColumn fx:id="isbnCol" prefWidth="75.0" style="-fx-border-color: #4a69bb; -fx-background-color: #9aceff;" text="Isbn" />
+            <TableColumn fx:id="isavailCol" prefWidth="75.0" style="-fx-border-color: #4a69bb; -fx-background-color: #9aceff;" text="IsAvail" />
+            <TableColumn fx:id="bookcounCol" prefWidth="75.0" style="-fx-border-color: #4a69bb; -fx-background-color: #9aceff;" text="BookCount" />
+            <TableColumn fx:id="forid" prefWidth="75.0" style="-fx-border-color: #4a69bb; -fx-background-color: #9aceff;" text="Book Id" />
          </columns>
       </TableView>
    </children>

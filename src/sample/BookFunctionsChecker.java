@@ -47,7 +47,7 @@ public class BookFunctionsChecker {
     }
     @FXML
     public void BookInfo(ActionEvent event)throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookInfo.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Issue.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));

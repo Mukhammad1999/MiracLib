@@ -12,7 +12,7 @@
     <database id="3" parent="1" name="Micralib">
       <ObjectId>16588</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>716</IntrospectionStateNumber>
+      <IntrospectionStateNumber>743</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </database>
@@ -119,7 +119,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>276</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>717</IntrospectionStateNumber>
+      <IntrospectionStateNumber>744</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -206,14 +206,14 @@
       <StateNumber>672</StateNumber>
     </table>
     <table id="36" parent="22" name="issue">
-      <ObjectId>16691</ObjectId>
+      <ObjectId>16697</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>715</StateNumber>
+      <StateNumber>742</StateNumber>
     </table>
     <table id="37" parent="22" name="users">
       <ObjectId>16648</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>611</StateNumber>
+      <StateNumber>728</StateNumber>
     </table>
     <column id="38" parent="35" name="id">
       <Position>1</Position>
@@ -252,73 +252,65 @@
       <StateNumber>672</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="44" parent="36" name="student_id">
+    <column id="44" parent="36" name="bookid">
       <Position>1</Position>
-      <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>712</StateNumber>
-      <TypeId>25</TypeId>
-    </column>
-    <column id="45" parent="36" name="bood_id">
-      <Position>2</Position>
       <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>713</StateNumber>
+      <StateNumber>739</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="46" parent="36" name="borrow_time">
-      <Position>3</Position>
+    <column id="45" parent="36" name="studentid">
+      <Position>2</Position>
       <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>714</StateNumber>
+      <StateNumber>740</StateNumber>
       <TypeId>25</TypeId>
+    </column>
+    <column id="46" parent="36" name="borrowed_time">
+      <Position>3</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>741</StateNumber>
+      <TypeId>1184</TypeId>
     </column>
     <column id="47" parent="36" name="overdue">
       <Position>4</Position>
       <DataType>boolean|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>715</StateNumber>
+      <StateNumber>742</StateNumber>
       <TypeId>16</TypeId>
     </column>
     <column id="48" parent="37" name="id">
-      <Position>2</Position>
-      <DataType>varchar|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>549</StateNumber>
-      <TypeId>1043</TypeId>
+      <Position>12</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>723</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="49" parent="37" name="password">
-      <Position>3</Position>
-      <DataType>varchar|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>549</StateNumber>
-      <TypeId>1043</TypeId>
+      <Position>13</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>724</StateNumber>
+      <TypeId>25</TypeId>
     </column>
     <column id="50" parent="37" name="is_admin">
-      <Position>7</Position>
+      <Position>14</Position>
       <DataType>boolean|0s</DataType>
-      <StateNumber>628</StateNumber>
+      <StateNumber>725</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="51" parent="37" name="isactive">
-      <Position>11</Position>
+    <column id="51" parent="37" name="is_student">
+      <Position>15</Position>
       <DataType>boolean|0s</DataType>
-      <StateNumber>611</StateNumber>
+      <StateNumber>726</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <index id="52" parent="37" name="users_pkey">
-      <ObjectId>16654</ObjectId>
-      <StateNumber>549</StateNumber>
-      <ColNames>id</ColNames>
-      <Unique>1</Unique>
-      <Primary>1</Primary>
-    </index>
-    <key id="53" parent="37" name="users_pkey">
-      <ObjectId>16655</ObjectId>
-      <StateNumber>549</StateNumber>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
-    </key>
+    <column id="52" parent="37" name="is_librarian">
+      <Position>16</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>727</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="53" parent="37" name="is_active">
+      <Position>17</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>728</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
   </database-model>
 </dataSource>

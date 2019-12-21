@@ -30,3 +30,7 @@
   -fx-border-radius:16;
 }
 
+.combo-box .arrow, .combo-box .arrow-button{
+    -fx-background-color: transparent;
+}
+

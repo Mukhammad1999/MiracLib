@@ -66,6 +66,10 @@ private TextField bookid;
             conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
             Statement statement = conn.createStatement();
             statement.execute(String.format("INSERT INTO books (id,title, genre, isbn, isavail, book_count) VALUES (%d,'%s','%s','%s',%B, %d)",dbbookid,dbtitle,dbgenre,dbisbn, true,dbbookcount));
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setContentText("Success!");
+            alert.showAndWait();
         }
 
         catch (Exception sql){

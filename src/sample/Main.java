@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("TitlePage.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("MiracLib Library by APJ Students");
         primaryStage.setScene(new Scene(root, 1200, 800));
         primaryStage.show();
     }
