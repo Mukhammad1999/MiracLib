@@ -1,6 +1,8 @@
 package sample.dbController;
 
 import java.sql.*;
+import java.util.Arrays;
+
 import sample.dbController.DBConnection;
 
 
@@ -22,65 +24,37 @@ public class User
     }
 
     public boolean checkUserName() {
+        boolean is_boolean = false;
         try(
                 Connection co = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
 
                 Statement st = co.createStatement();
 
                 ) {
-            System.out.println(this.userName.charAt(0));
-
-
-            // Creating array of string length
-//            char[] ch = new char[this.userName.length()];
-//
-//            // Copy character by character into array
-//            for (int i = 0; i < this.userName.length(); i++) {
-//                ch[i] = this.userName.charAt(i);
-//            }
-//            System.out.println(ch);
-
-            if (st.execute("SELECT FROM users WHERE id = '"+this.userName+"'"))
-            {
-                System.out.println("id");
-                System.out.println(st.executeUpdate("SELECT FROM users WHERE id = '"+this.userName+"'"));
-                return true;
-            } else {
-                System.out.println("id");
-                System.out.println(st.execute("SELECT FROM users WHERE id = '"+this.userName+"'"));
-                return false;
+            //System.out.println(this.userName.charAt(0));
+            ResultSet rs = st.executeQuery("SELECT FROM users WHERE id = '"+this.userName+"'");
+            if (rs.next()) is_boolean = true;
+            else is_boolean = false;
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
+            return is_boolean;
     }
 
 
     public boolean checkPass() {
+        boolean is_boolean = false;
         try(
                 Connection co = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
-
                 Statement st = co.createStatement();
-
         ) {
-            if (st.execute("SELECT FROM users WHERE password = '"+this.password+"'"))
-            {
-                System.out.println("pass");
-                System.out.println(st.execute("SELECT FROM users WHERE password = '"+this.password+"'"));
-                return true;
-            } else {
-                System.out.println("pass");
-                System.out.println(st.execute("SELECT FROM users WHERE password = '"+this.password+"'"));
-                return false;
-            }
-
-
+            ResultSet rs = st.executeQuery("SELECT FROM users WHERE password = '"+this.password+"'");
+            if (rs.next()) is_boolean = true;
+            else is_boolean = false;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return is_boolean;
     }
 
 

@@ -50,24 +50,20 @@ public class SingInController  {
         }
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
             User user = new User(loginarea.getText(), passwordField.getText());
-
-            System.out.println("controll");
-            System.out.println("controll");
-
+            if(!user.checkUserName() && (login.charAt(0) == 'L' || login.charAt(0) == 'S')){
+                icons.setText("Incorrect ID");
+            }
+            if(!user.checkPass()) {
+                icons.setText("Incorrect Password");
+            }
             if(user.checkUserName() && user.checkPass() ){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root1));
                 stage.show();
-
             }
-            else if(user.checkPass()){
-                icons.setText("Incorrect Password");
-            }
-            else if(user.checkUserName()){
-                icons.setText("Incorrect ID");
-            }else if(user.checkUserName()==true && user.checkPass()==true){
+            else if(user.checkUserName() && user.checkPass()){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Librarian.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
