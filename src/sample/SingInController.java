@@ -69,7 +69,7 @@ public class SingInController  {
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root1));
                 stage.show();
-            }*/
+            }
 
         }
         else {

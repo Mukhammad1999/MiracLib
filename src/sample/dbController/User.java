@@ -12,16 +12,16 @@ public class User
 {
     DBConnection dbConnection;
     protected   String userName;
-    private     String pasSword;
+    private     String password;
 
     public User(String userName, String password) {
         this.userName = userName;
-        this.pasSword = password;
+        this.password = password;
         System.out.println("Sas");
     }
     public User(){
         this.userName = "";
-        this.pasSword = "";
+        this.password = "";
     }
 
     public boolean checkUserName() {
@@ -68,7 +68,7 @@ public class User
         return userName;
     }
     public String getPassword() {
-        return pasSword;
+        return password;
     }
 
 }

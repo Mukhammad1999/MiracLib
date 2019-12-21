@@ -22,7 +22,7 @@ public class Controller implements Initializable{
     @FXML
     public  void SignInPageC(ActionEvent event) throws IOException {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignInPage.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUpPage.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root1));
