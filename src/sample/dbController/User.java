@@ -1,6 +1,8 @@
 package sample.dbController;
 
 import java.sql.*;
+import java.util.Arrays;
+
 import sample.dbController.DBConnection;
 
 
@@ -22,99 +24,39 @@ public class User
         this.pasSword = "";
     }
 
-
-   /* public boolean is_admin(){
-        Boolean isAdmin = false;
-        try(
-                Connection co = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
-
-                Statement st = co.createStatement();
-
-        ) {
-
-
-            String strSelect = ("SELECT * FROM users WHERE id like \"427215%\" AND is_admin=true;");
-            ResultSet resultSet = st.executeQuery(strSelect);
-
-            resultSet.getString("id");
-
-            if(resultSet.getString("id") == this.userName){
-                isAdmin = true;
-            }
-            else{
-                isAdmin = false;
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-        }
-        return isAdmin;
-
-    }*/
-
-
     public boolean checkUserName() {
-
-        Boolean isTrue = false;
-
+        boolean is_boolean = false;
         try(
                 Connection co = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
 
                 Statement st = co.createStatement();
 
                 ) {
-
-            String strSelect = ("select id from users where id = " + this.userName + ";");
-
-            ResultSet resultSet = st.executeQuery(strSelect);
-
-            resultSet.getString("id");
-
-            if(resultSet.getString("id") == this.userName){
-                System.out.println("User is true");
-                isTrue = true;
+            //System.out.println(this.userName.charAt(0));
+            ResultSet rs = st.executeQuery("SELECT FROM users WHERE id = '"+this.userName+"'");
+            if (rs.next()) is_boolean = true;
+            else is_boolean = false;
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            else{
-                System.out.println("User is false");
-                isTrue = false;
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-        }
-        return isTrue;
+            return is_boolean;
     }
 
 
-  /*  public boolean checkPass() {
-
-        Boolean isTrue = false;
-
+    public boolean checkPass() {
+        boolean is_boolean = false;
         try(
                 Connection co = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
                 Statement st = co.createStatement();
         ) {
-
-            String strSelect = ("select password from users where password = " + this.pasSword + ";");
-
-            ResultSet resultSet = st.executeQuery(strSelect);
-            resultSet.getString("password");
-            if(resultSet.getString("password") == this.pasSword){
-                System.out.println("Pass is true");
-                isTrue = true;
-            }
-            else{
-                System.out.println("Pass is false");
-                isTrue = false;
-            }
-
+            ResultSet rs = st.executeQuery("SELECT FROM users WHERE password = '"+this.password+"'");
+            if (rs.next()) is_boolean = true;
+            else is_boolean = false;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return isTrue;
-    }*/
+        return is_boolean;
+    }
 
 
     
