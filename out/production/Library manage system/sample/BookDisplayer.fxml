@@ -11,11 +11,11 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
          <columns>
-            <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="titleCol" prefWidth="75.0" style="-fx-border-color: white; fx-text-fill: white;" text="Title" />
             <TableColumn fx:id="genreCol" prefWidth="75.0" text="Genre" />
-            <TableColumn fx:id="isbnCol" prefWidth="75.0" text="Isbn" />
+            <TableColumn fx:id="isbnCol" prefWidth="75.0" style="-fx-border-color: white;" text="Isbn" />
             <TableColumn fx:id="isavailCol" prefWidth="75.0" text="IsAvail" />
-            <TableColumn fx:id="bookcounCol" prefWidth="75.0" text="BookCount" />
+            <TableColumn fx:id="bookcounCol" prefWidth="75.0" style="-fx-border-color: white;" text="BookCount" />
             <TableColumn fx:id="forid" prefWidth="75.0" text="Book Id" />
          </columns>
       </TableView>

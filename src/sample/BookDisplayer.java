@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
@@ -38,6 +39,7 @@ ObservableList<Book> list = FXCollections.observableArrayList();
     @FXML private TableColumn<Book,Boolean> isavailCol;
     @FXML private TableColumn<Book,Integer> bookcounCol;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initcol();
@@ -59,8 +61,8 @@ ObservableList<Book> list = FXCollections.observableArrayList();
                 String isbn = rset.getString("isbn");
                 Boolean isAvail = rset.getBoolean("isavail");
                 Integer book_count = rset.getInt("book_count");
-
                 list.add(new Book(titlex,genre,isbn,isAvail,book_count,id));
+
             }
         } catch(SQLException ex) {
             ex.printStackTrace();
@@ -77,17 +79,13 @@ ObservableList<Book> list = FXCollections.observableArrayList();
     }
 
 
+
     public static class Book{
             private final SimpleStringProperty title;
             private final SimpleStringProperty genre;
             private final SimpleStringProperty isbn;
             private final SimpleBooleanProperty isavail;
             private final SimpleIntegerProperty book_count;
-
-
-
-
-
         private final SimpleIntegerProperty id;
 
         public Book(String title, String genre, String isbn, Boolean isavail, Integer book_count, Integer id) {

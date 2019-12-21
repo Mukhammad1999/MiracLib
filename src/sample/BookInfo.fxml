@@ -35,6 +35,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
@@ -42,12 +43,14 @@
             <Label text="Genre" GridPane.rowIndex="1" />
             <Label text="Isbn" GridPane.rowIndex="2" />
             <Label text="Available" GridPane.rowIndex="3" />
-            <Label prefHeight="97.0" prefWidth="251.0" text="Number Of Books" GridPane.rowIndex="4" />
+            <Label prefHeight="97.0" prefWidth="251.0" text="Number Of Books" GridPane.rowIndex="5" />
             <Label fx:id="fortitle" prefHeight="80.0" prefWidth="233.0" GridPane.columnIndex="1" />
             <Label fx:id="forgenre" prefHeight="83.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label fx:id="forisbn" prefHeight="83.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label fx:id="forisavail" prefHeight="82.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label prefHeight="83.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="forcount" prefHeight="83.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label prefHeight="43.0" prefWidth="228.0" text="ID" GridPane.rowIndex="4" />
+            <Label fx:id="forid" prefHeight="30.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>

@@ -11,7 +11,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class BookInfo  implements Initializable {
+public class BookInfo implements Initializable {
+    private final String titlex;
+    private final String genre;
+    private final String isbn;
+    private final Integer book_count;
+    private final Integer id;
+    private final Boolean isavail;
     @FXML
     private Label fortitle;
     @FXML
@@ -22,25 +28,58 @@ public class BookInfo  implements Initializable {
     private Label forcount;
     @FXML
     private Label forisavail;
+    @FXML
+    private Label forid;
+
+
+    public BookInfo(String title, String genre, String isbn, Integer book_count, Integer id,Boolean isavail){
+        this.titlex = title;
+        this.genre = genre;
+        this.isbn = isbn;
+        this.book_count= book_count;
+        this.id = id;
+        this.isavail = isavail;
+        loaddata();
+    }
+    public BookInfo(){
+        this.titlex = "sos";
+        this.genre = "public";
+        this.isbn = "7536489";
+        this.book_count= 45;
+        this.id = 1;
+        this.isavail = true;
+
+    }
 
 
 
     private void loaddata() {
+
+        if(!titlex.isEmpty()&&!genre.isEmpty()&&(!isbn.isEmpty())){
         try {
             Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
+
             Statement statement = conn.createStatement();
-            ResultSet rset = statement.executeQuery("SELECT title from books where title = 'Harry';");
+            ResultSet rset = statement.executeQuery("SELECT * from books where title = '"+titlex+"';");
             while(rset.next()){
                 fortitle.setText(rset.getString("title"));
+                forgenre.setText(rset.getString("genre"));
+                int i = rset.getInt("book_count");
+                forcount.setText(String.valueOf(i));
+                forisbn.setText(rset.getString("isbn"));
+                forid.setText(String.valueOf(rset.getInt("id")));
+                if(rset.getBoolean("isavail")){
+                    forisavail.setText("Yes");
+                }else{
+                    forisavail.setText("No");
+                }
             }
-
             System.out.println("Kakaxa");
         }
-
-
         catch (Exception ex){
             ex.printStackTrace();
         }
+    }
     }
 
 
