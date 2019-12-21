@@ -40,11 +40,15 @@ ObservableList<Book> list = FXCollections.observableArrayList();
     @FXML private TableColumn<Book,Integer> bookcounCol;
 
 
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initcol();
         loaddata();
     }
+
     private void loaddata() {
         try (
                 Connection conn = DriverManager.getConnection( "jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
@@ -62,6 +66,7 @@ ObservableList<Book> list = FXCollections.observableArrayList();
                 Boolean isAvail = rset.getBoolean("isavail");
                 Integer book_count = rset.getInt("book_count");
                 list.add(new Book(titlex,genre,isbn,isAvail,book_count,id));
+
 
             }
         } catch(SQLException ex) {

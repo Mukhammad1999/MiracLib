@@ -12,12 +12,12 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class BookInfo implements Initializable {
-    private final String titlex;
-    private final String genre;
-    private final String isbn;
-    private final Integer book_count;
-    private final Integer id;
-    private final Boolean isavail;
+    private  String titlex;
+    private  String genre;
+    private  String isbn;
+    private  Integer book_count;
+    private  Integer id;
+    private  Boolean isavail;
     @FXML
     private Label fortitle;
     @FXML
@@ -50,10 +50,21 @@ public class BookInfo implements Initializable {
         this.isavail = true;
 
     }
+    public void getInfo(String title, String genre, String isbn, Integer book_count, Integer id,Boolean isavail){
+        this.titlex = title;
+        this.genre = genre;
+        this.isbn = isbn;
+        this.book_count= book_count;
+        this.id = id;
+        this.isavail = isavail;
+        loaddata();
+    }
 
 
 
     private void loaddata() {
+
+
 
         if(!titlex.isEmpty()&&!genre.isEmpty()&&(!isbn.isEmpty())){
         try {
