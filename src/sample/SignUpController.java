@@ -57,14 +57,16 @@ public class SignUpController<idd> {
                 conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
                 Statement statement = conn.createStatement();
 //                Add student
+                String a = "s" + loginarea.getText();
+                System.out.println(a);
                 if ( studentRadioButton.selectedProperty().getValue() ) {
                     statement.execute("INSERT INTO users (id, password, is_admin, is_active, is_student, is_librarian) " +
-                            "VALUES ('"+loginarea.getText()+"', '"+passwordarea.getText()+"', false, false, true, false)");
+                            "VALUES ('S"+loginarea.getText()+"', '"+passwordarea.getText()+"', false, false, true, false)");
                 }
 //                Add librarian
                 if (librarianRadioButton.selectedProperty().getValue()){
                     statement.execute("INSERT INTO users (id, password, is_admin, is_active, is_student, is_librarian) " +
-                            "VALUES ('"+loginarea.getText()+"', '"+passwordarea.getText()+"', false, false, false, true)");
+                            "VALUES ('L"+loginarea.getText()+"', '"+passwordarea.getText()+"', false, false, false, true)");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

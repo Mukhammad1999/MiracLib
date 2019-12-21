@@ -37,22 +37,24 @@ public class SingInController  {
 
         if(loginarea.getText().isEmpty()) {
             forlogin.setText("The Login area cannot be empty");
-            login= loginarea.getText();
         }else{
+            login= loginarea.getText();
             forlogin.setText("");
         }
         if(passwordField.getText().isEmpty()){
             forpass.setText("Password area cannot be empty");
-            password = passwordField.getText();
         }
         else{
+            password = passwordField.getText();
             forpass.setText("");
         }
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
-
             User user = new User(loginarea.getText(), passwordField.getText());
 
-            if(user.checkUserName()==true && user.checkPass()==true ){
+            System.out.println("controll");
+            System.out.println("controll");
+
+            if(user.checkUserName() && user.checkPass() ){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -60,10 +62,10 @@ public class SingInController  {
                 stage.show();
 
             }
-            else if(user.checkPass()==false){
+            else if(user.checkPass()){
                 icons.setText("Incorrect Password");
             }
-            else if(user.checkUserName()==false){
+            else if(user.checkUserName()){
                 icons.setText("Incorrect ID");
             }else if(user.checkUserName()==true && user.checkPass()==true){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Librarian.fxml"));
