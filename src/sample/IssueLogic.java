@@ -11,6 +11,7 @@ import sample.dbController.DBConnection;
 
 import java.net.URL;
 import java.sql.*;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 
@@ -75,9 +76,14 @@ public class IssueLogic implements Initializable {
         String sql2 ="UPDATE books set isavail =false where id = +bookId+;";
 
         try(Connection conn = DriverManager.getConnection( "jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
-            PreparedStatement ment = conn.prepareStatement("INSERT into issue(studentid,bookid) values (?,?)")) {
+            PreparedStatement ment = conn.prepareStatement("INSERT into issue(studentid, bookid, borrowed_time, overdue) values (?,?,?,false)")) {
+//            Define current week of year and day of week
+            Calendar temp = Calendar.getInstance();
+            String current_time = temp.getWeeksInWeekYear() + "/" + temp.get(Calendar.DAY_OF_MONTH);
+
             ment.setString(1, userId);
             ment.setInt(2, bookId);
+            ment.setString(3, current_time);
 
             Statement statement = conn.createStatement();
 

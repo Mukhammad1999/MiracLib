@@ -28,7 +28,6 @@ public class SingInController  {
     private Label forpass;
     @FXML
     private Label icons;
-    @FXML
     public void SignIn(ActionEvent event) throws IOException {
 
 
@@ -47,21 +46,29 @@ public class SingInController  {
 
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
             User user = new User(loginarea.getText(), passwordField.getText());
+
             if(!user.checkUserName() && (login.charAt(0) == 'L' || login.charAt(0) == 'S')){
                 icons.setText("Incorrect ID");
             }
             if(!user.checkPass()) {
                 icons.setText("Incorrect Password");
             }
-            if(user.checkUserName() && user.checkPass() ){
+            if(user.checkUserName() && user.checkPass() && login.charAt(0) == 'A'){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdministratorArea.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root1));
                 stage.show();
             }
-            else if(user.checkUserName() && user.checkPass()){
+            else if(user.checkUserName() && user.checkPass() && login.charAt(0) == 'L'){
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root1));
+                stage.show();
+            }
+            else if(user.checkUserName() && user.checkPass() && login.charAt(0) == 'S'){
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentPage.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root1));

@@ -11,17 +11,25 @@ import sample.dbController.DBConnection;
 public class User
 {
     DBConnection dbConnection;
-    protected   String userName;
-    private     String password;
+    protected static   String userName;
+    private   static   String password;
 
-    public User(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-        System.out.println("Sas");
+    public User(String userNamee, String passwordd) {
+        userName = userNamee;
+        password = passwordd;
     }
     public User(){
         this.userName = "";
         this.password = "";
+    }
+
+    public static String getUserId() {
+        System.out.println("13123");
+        System.out.println(userName);
+        return userName;
+    }
+    public static String getUserPass() {
+        return password;
     }
 
     public boolean checkUserName() {
@@ -33,6 +41,7 @@ public class User
 
                 ) {
             //System.out.println(this.userName.charAt(0));
+            System.out.println(userName);
             ResultSet rs = st.executeQuery("SELECT FROM users WHERE id = '"+this.userName+"'");
             if (rs.next()) is_boolean = true;
             else is_boolean = false;

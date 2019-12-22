@@ -17,34 +17,31 @@ import sample.dbController.User;
 import java.io.IOException;
 import java.sql.*;
 
-public class AdministratorArea extends User {
+public class AdministratorArea {
         @FXML
         private ComboBox librarianFunction;
         @FXML private ComboBox usermanage;
         private String userName, password;
+        @FXML
+        Label userId;
 
         @FXML
          private AnchorPane anchorPane;
         ObservableList<String> functionSet = FXCollections.observableArrayList("AddBook","DisplayBooks", "ModifyBook","DeleteBook");
         ObservableList<String> userFunctionSet = FXCollections.observableArrayList("Add User","Delete User");
 
-   public AdministratorArea(){
 
-       this.userName = "AU1810128";
-       this.password = "whiteblack";
-   }
-   public AdministratorArea( String userName, String password) {
-       super(userName, password);
-       this.userName = userName;
-       this.password = password;
 
-    }
 
 
         public void initialize() {
             librarianFunction.setItems(functionSet);
             usermanage.setItems(userFunctionSet);
+
+            userId.setText(User.getUserId());
+
         }
+
         public void FunctionSet(ActionEvent event) throws IOException{
             if(librarianFunction.getValue() == "AddBook"){
                 anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("BookAdder.fxml")));

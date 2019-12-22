@@ -11,10 +11,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.sql.*;
 
+import sample.dbController.User;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,6 +27,8 @@ public class LibrarianPageController {
     private ComboBox librarianFunction;
     @FXML
     private AnchorPane anchorPane;
+    @FXML
+    private Label userId;
     @FXML
     private ComboBox usermanage;
     ObservableList<String> functionSet = FXCollections.observableArrayList("AddBook","DisplayBooks", "ModifyBook","DeleteBook");
@@ -41,7 +45,7 @@ public class LibrarianPageController {
     public void initialize() {
         librarianFunction.setItems(functionSet);
         usermanage.setItems(userfunctionSet);
-
+        userId.setText(User.getUserId());
     }
     public void FunctionSet(ActionEvent event) throws IOException{
         if(librarianFunction.getValue() == "AddBook"){

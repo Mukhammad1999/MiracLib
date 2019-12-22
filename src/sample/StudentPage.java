@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,19 +14,21 @@ import sample.dbController.User;
 
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class StudentPage extends User {
+public class StudentPage implements Initializable {
     @FXML
     AnchorPane anchorPane;
     @FXML
     private Label forid;
     @FXML
     private Label forbook;
+    @FXML
+    private Label userId;
     @FXML private Label forstatus;
-    public void Returnbook(ActionEvent event){
 
-    }
     public void viewbooks(ActionEvent event)throws IOException {
         anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("BookDisplayer.fxml")));
     }
@@ -40,6 +43,16 @@ public class StudentPage extends User {
 
 
 
-
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        try {
+            loadInfo();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        userId.setText(User.getUserId());
+    }
+    public void loadInfo( ) throws IOException {
+        anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("StudentInfo.fxml")));
+    }
 }

@@ -33,7 +33,7 @@
                         <Image url="@icons/user%202.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="14.0" layoutY="10.0" prefHeight="35.0" prefWidth="116.0" text="Label">
+                  <Label fx:id="userId" alignment="CENTER" layoutX="14.0" layoutY="10.0" prefHeight="35.0" prefWidth="116.0">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
