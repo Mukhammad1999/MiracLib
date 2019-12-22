@@ -29,7 +29,7 @@ public class Controller implements Initializable{
         stage.show();
     }
     public void admin(ActionEvent event)throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StudentPage.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root1));

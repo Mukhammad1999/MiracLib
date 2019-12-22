@@ -66,8 +66,6 @@ ObservableList<Book> list = FXCollections.observableArrayList();
                 Boolean isAvail = rset.getBoolean("isavail");
                 Integer book_count = rset.getInt("book_count");
                 list.add(new Book(titlex,genre,isbn,isAvail,book_count,id));
-
-
             }
         } catch(SQLException ex) {
             ex.printStackTrace();
