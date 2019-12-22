@@ -44,10 +44,7 @@ public class SingInController  {
         if(passwordField.getText().isEmpty()){
             forpass.setText("Password area cannot be empty");
         }
-        else{
-            password = passwordField.getText();
-            forpass.setText("");
-        }
+
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
             User user = new User(loginarea.getText(), passwordField.getText());
             if(!user.checkUserName() && (login.charAt(0) == 'L' || login.charAt(0) == 'S')){

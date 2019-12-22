@@ -66,7 +66,7 @@ public class AdministratorArea extends User {
                 anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("SignUpPage.fxml")));
             }
             else if(usermanage.getValue() == "Delete User"){
-                System.out.println("Wow");
+                anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("DeleteUser.fxml")));
             }
 
         }

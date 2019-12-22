@@ -32,6 +32,7 @@ public class IssueLogic implements Initializable {
         String qu1 = "SELECT * FROM users where id ='"+stid+"';";
 
 
+
         Boolean isfound = false;
        try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
             Statement statement = conn.createStatement()){
@@ -81,13 +82,13 @@ public class IssueLogic implements Initializable {
             Statement statement = conn.createStatement();
 
             if (ment.execute() && statement.execute(sql2)) {
-                System.out.println("NEGGGAAA");
+
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Confirmed");
                 alert.setContentText("Success");
                 alert.showAndWait();
             } else {
-                System.out.println("Why so hatred");
+
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("NotConfirmed");
                 alert.setContentText("Bibametr");
