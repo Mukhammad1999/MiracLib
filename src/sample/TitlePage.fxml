@@ -50,13 +50,15 @@
             <Button alignment="CENTER" mnemonicParsing="false" onAction="#SignInPageC" prefHeight="50.0" prefWidth="181.0" style="-fx-background-color: white; -fx-border-color: darkslateblue; -fx-background-radius: 16px; -fx-border-radius: 16px;" text="Sign In" textFill="#2c1eeb">
                <VBox.margin>
                   <Insets />
-               </VBox.margin></Button>
+               </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font></Button>
             <HBox alignment="CENTER_RIGHT">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#admin" text="Admin" />
          </children>
       </VBox>
    </children>

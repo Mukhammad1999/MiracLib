@@ -16,9 +16,6 @@ public class Main extends Application {
         primaryStage.setTitle("MiracLib Library by APJ Students");
         primaryStage.setScene(new Scene(root, 1200, 800));
         primaryStage.show();
-        Calendar temp = Calendar.getInstance();
-        System.out.println(temp.getWeeksInWeekYear() + "/" + temp.get(Calendar.DAY_OF_MONTH));
-        System.out.println(temp.get(Calendar.DAY_OF_MONTH));
     }
 
 
