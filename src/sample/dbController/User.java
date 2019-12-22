@@ -17,6 +17,7 @@ public class User
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
+        System.out.println("Sas");
     }
     public User(){
         this.userName = "";

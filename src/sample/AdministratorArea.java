@@ -20,11 +20,13 @@ import java.sql.*;
 public class AdministratorArea extends User {
         @FXML
         private ComboBox librarianFunction;
+        @FXML private ComboBox usermanage;
         private String userName, password;
 
         @FXML
          private AnchorPane anchorPane;
-        ObservableList<String> functionSet = FXCollections.observableArrayList("AddBook","DisplayBooks", "ModifyBook","DeleteBook","DeleteStudent");
+        ObservableList<String> functionSet = FXCollections.observableArrayList("AddBook","DisplayBooks", "ModifyBook","DeleteBook");
+        ObservableList<String> userFunctionSet = FXCollections.observableArrayList("Add User","Delete User");
 
    public AdministratorArea(){
 
@@ -38,54 +40,47 @@ public class AdministratorArea extends User {
 
     }
 
-    @FXML
-        public void AddUser(ActionEvent event)throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUpPage.fxml"));
+
+        public void initialize() {
+            librarianFunction.setItems(functionSet);
+            usermanage.setItems(userFunctionSet);
+        }
+        public void FunctionSet(ActionEvent event) throws IOException{
+            if(librarianFunction.getValue() == "AddBook"){
+                anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("BookAdder.fxml")));
+
+            }
+            else if(librarianFunction.getValue() == "DisplayBooks"){
+                anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("BookDisplayer.fxml")));
+            }
+            else if(librarianFunction.getValue() == "DeleteBook"){
+                anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("DeleteBookDialog.fxml")));
+
+            }else if(librarianFunction.getValue() == "ModifyBook"){
+                anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("Modifier.fxml")));
+
+            }
+        }
+        public void UserFunctionSet(ActionEvent event) throws IOException{
+            if(usermanage.getValue() == "Add User"){
+                anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("SignUpPage.fxml")));
+            }
+            else if(usermanage.getValue() == "Delete User"){
+                anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("DeleteUser.fxml")));
+            }
+
+        }
+        public void LogOut(ActionEvent event) throws IOException{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignInPage.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root1));
             stage.show();
 
         }
-        public void initialize() {
-            librarianFunction.setItems(functionSet);
-        }
-        public void FunctionSet(ActionEvent event) throws IOException{
-            if(librarianFunction.getValue() == "AddBook"){
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookAdder.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root1));
-                stage.show();
-            }
-            else if(librarianFunction.getValue() == "DisplayBooks"){
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookDisplayer.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root1));
-                stage.show();
-            }
-            else if(librarianFunction.getValue() == "DeleteBook"){
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteBookDialog.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root1));
-                stage.show();
-            }else if(librarianFunction.getValue() == "Modify"){
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ModigyPOP.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root1));
-                stage.show();
-            }
-        }
-        public void BackButton(ActionEvent event) throws IOException{
-
-
-
-        }
-
 
     }
+
+
 
 

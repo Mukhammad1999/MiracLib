@@ -69,11 +69,6 @@
             <TextField fx:id="isbn" prefHeight="32.0" prefWidth="184.0" />
          </children>
       </HBox>
-      <Button layoutX="227.0" layoutY="621.0" mnemonicParsing="false" onAction="#Accept" prefHeight="41.0" prefWidth="108.0" style="-fx-background-color: #C72C41;" text="Accept" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
       <AnchorPane layoutX="393.0" layoutY="223.0" prefHeight="472.0" prefWidth="382.0">
          <children>
             <ImageView fitHeight="276.0" fitWidth="347.0" layoutX="22.0" layoutY="196.0">
@@ -83,30 +78,24 @@
             </ImageView>
             <AnchorPane fx:id="anchorPane" layoutX="91.0" layoutY="22.0" prefHeight="200.0" prefWidth="208.0">
                <children>
-                  <VBox layoutY="28.0" prefHeight="214.0" prefWidth="208.0" styleClass="bg" stylesheets="@style.css" AnchorPane.bottomAnchor="-28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0" />
+                  <VBox prefHeight="214.0" prefWidth="208.0" styleClass="bg" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <Label fx:id="info" layoutX="6.0" layoutY="6.0" prefHeight="17.0" prefWidth="529.0" text="Label" />
+            <Button layoutX="-54.0" layoutY="407.0" mnemonicParsing="false" onAction="#Accept" prefHeight="41.0" prefWidth="108.0" style="-fx-background-color: #42e6a4;" text="Accept" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="-4.0" prefHeight="100.0" prefWidth="775.0" style="-fx-background-color: #03c6fc;">
+      <AnchorPane layoutY="-4.0" prefHeight="100.0" prefWidth="775.0" style="-fx-background-color: #018383;">
          <children>
-            <Button layoutX="1.0" layoutY="7.0" mnemonicParsing="false" onAction="#Back" prefHeight="92.0" prefWidth="88.0" style="-fx-background-color: transparent;" />
-            <ImageView fitHeight="82.0" fitWidth="46.0" layoutX="22.0" layoutY="9.0" style="-fx-rotate: 90;">
-               <image>
-                  <Image url="@icons/white-down-arrow-png-2.png" />
-               </image>
-            </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="189.0" layoutY="16.0" prefHeight="75.0" prefWidth="369.0" text="Adding a New Book" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="203.0" layoutY="13.0" prefHeight="75.0" prefWidth="369.0" text="Adding a New Book" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <ImageView fitHeight="50.0" fitWidth="54.0" layoutX="707.0" layoutY="29.0">
-               <image>
-                  <Image url="@icons/user%202.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
    </children>

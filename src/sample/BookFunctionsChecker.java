@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class BookFunctionsChecker {
+
     @FXML
     public void Add(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookAdder.fxml"));
@@ -38,7 +39,7 @@ public class BookFunctionsChecker {
     }
     @FXML
     public void Modify(ActionEvent event) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignInPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Modifier.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
@@ -46,7 +47,7 @@ public class BookFunctionsChecker {
     }
     @FXML
     public void BookInfo(ActionEvent event)throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BookInfo.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Issue.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));

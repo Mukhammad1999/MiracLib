@@ -44,10 +44,7 @@ public class SingInController  {
         if(passwordField.getText().isEmpty()){
             forpass.setText("Password area cannot be empty");
         }
-        else{
-            password = passwordField.getText();
-            forpass.setText("");
-        }
+
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
             User user = new User(loginarea.getText(), passwordField.getText());
             if(!user.checkUserName() && (login.charAt(0) == 'L' || login.charAt(0) == 'S')){
@@ -64,7 +61,7 @@ public class SingInController  {
                 stage.show();
             }
             else if(user.checkUserName() && user.checkPass()){
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Librarian.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LibrarianPage.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root1));
@@ -78,6 +75,10 @@ public class SingInController  {
     }
 
     public void BackButt(ActionEvent event)throws IOException{
-
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TitlePage.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 }

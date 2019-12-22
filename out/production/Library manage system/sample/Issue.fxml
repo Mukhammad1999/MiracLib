@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="323.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.IssueLogic">
+   <children>
+      <Label layoutX="28.0" layoutY="36.0" prefHeight="64.0" prefWidth="237.0" text="Book ID" />
+      <Label layoutX="28.0" layoutY="176.0" prefHeight="64.0" prefWidth="237.0" text="Student ID" />
+      <TextField fx:id="bookid" layoutX="265.0" layoutY="56.0" onInputMethodTextChanged="#LoadInfo" />
+      <TextField fx:id="studentid" layoutX="265.0" layoutY="196.0" />
+      <Button layoutX="173.0" layoutY="263.0" mnemonicParsing="false" onAction="#LoadInfo" prefHeight="25.0" prefWidth="94.0" text="Issue" />
+      <Label fx:id="nofound" layoutX="185.0" layoutY="60.0" prefHeight="17.0" prefWidth="63.0" />
+      <Label fx:id="overdue_detector" layoutX="193.0" layoutY="200.0" prefHeight="17.0" prefWidth="55.0" />
+      <Label fx:id="isavail" layoutX="315.0" layoutY="92.0" prefHeight="17.0" prefWidth="49.0" />
+      <Button layoutX="289.0" layoutY="263.0" mnemonicParsing="false" onAction="#ConfirmIssue" style="-fx-background-color: green;" text="Confirm" />
+   </children>
+</AnchorPane>

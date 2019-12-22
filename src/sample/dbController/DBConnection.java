@@ -1,6 +1,5 @@
 package sample.dbController;
 
-import com.sun.glass.ui.Window;
 
 import java.sql.*;
 

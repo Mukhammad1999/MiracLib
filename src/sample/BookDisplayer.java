@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
@@ -20,6 +21,7 @@ import sample.dbController.DBConnection;
 
 import java.awt.*;
 
+import java.math.BigInteger;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -32,16 +34,21 @@ ObservableList<Book> list = FXCollections.observableArrayList();
     private TableView<Book> tableview;
     @FXML private TableColumn<Book,String> titleCol;
     @FXML private TableColumn<Book,String> genreCol;
-
+    @FXML private  TableColumn<Book,Integer> forid;
     @FXML private TableColumn<Book,String> isbnCol;
     @FXML private TableColumn<Book,Boolean> isavailCol;
     @FXML private TableColumn<Book,Integer> bookcounCol;
+
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initcol();
         loaddata();
     }
+
     private void loaddata() {
         try (
                 Connection conn = DriverManager.getConnection( "jdbc:postgresql://localhost:5432/Micralib", "postgres", "rahimho1499");
@@ -52,12 +59,15 @@ ObservableList<Book> list = FXCollections.observableArrayList();
             ResultSet rset = stmt.executeQuery(strSelect);
             System.out.println("The records selected are:");
             while(rset.next()) {
+                Integer id = rset.getInt("id");
                 String titlex = rset.getString("title");
                 String genre = rset.getString("genre");
                 String isbn = rset.getString("isbn");
                 Boolean isAvail = rset.getBoolean("isavail");
                 Integer book_count = rset.getInt("book_count");
-                list.add(new Book(titlex,genre,isbn,isAvail,book_count));
+                list.add(new Book(titlex,genre,isbn,isAvail,book_count,id));
+
+
             }
         } catch(SQLException ex) {
             ex.printStackTrace();
@@ -70,7 +80,9 @@ ObservableList<Book> list = FXCollections.observableArrayList();
         isbnCol.setCellValueFactory(new PropertyValueFactory<>("isbn"));
         isavailCol.setCellValueFactory(new PropertyValueFactory<>("isavail"));
         bookcounCol.setCellValueFactory(new PropertyValueFactory<>("book_count"));
+        forid.setCellValueFactory(new PropertyValueFactory<>("id"));
     }
+
 
 
     public static class Book{
@@ -79,13 +91,15 @@ ObservableList<Book> list = FXCollections.observableArrayList();
             private final SimpleStringProperty isbn;
             private final SimpleBooleanProperty isavail;
             private final SimpleIntegerProperty book_count;
+        private final SimpleIntegerProperty id;
 
-        public Book(String title, String genre,String isbn, Boolean isavail, Integer book_count) {
+        public Book(String title, String genre, String isbn, Boolean isavail, Integer book_count, Integer id) {
             this.title = new SimpleStringProperty(title);
             this.genre = new SimpleStringProperty(genre);
             this.isbn = new SimpleStringProperty(isbn);
             this.isavail = new SimpleBooleanProperty(isavail);
             this.book_count = new SimpleIntegerProperty(book_count);
+            this.id = new SimpleIntegerProperty(id);
         }
         public String getTitle() {
             return title.get();
@@ -102,5 +116,6 @@ ObservableList<Book> list = FXCollections.observableArrayList();
         public int getBook_count() {
             return book_count.get();
         }
+        public int getId() {return id.get();}
     }
 }
