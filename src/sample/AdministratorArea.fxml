@@ -41,7 +41,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Button layoutX="20.0" layoutY="547.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="46.0" prefWidth="163.0" style="-fx-background-color: transparent;" />
+            <Button layoutX="14.0" layoutY="540.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="62.0" prefWidth="180.0" style="-fx-background-color: transparent;" />
             <ImageView fitHeight="35.0" fitWidth="52.0" layoutX="116.0" layoutY="606.0">
                <image>
                   <Image url="@icons/Rectangle%2034.png" />

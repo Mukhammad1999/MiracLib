@@ -60,13 +60,13 @@ public class LibrarianPageController {
     }
     public void UserFunctionSet(ActionEvent event) throws IOException{
         if(usermanage.getValue() == "Add Student"){
-            anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("SignUpPage.fxml")));
+            anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("SignUpPageL.fxml")));
         }
         else if(usermanage.getValue() == "Delete Student"){
-            System.out.println("Wow");
+            anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("DeleteUser.fxml")));
+
         } else if (usermanage.getValue() == "Issue Book") {
             anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("Issue.fxml")));
-
         }
 
     }
