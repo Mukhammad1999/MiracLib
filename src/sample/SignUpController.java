@@ -36,8 +36,8 @@ public class SignUpController<idd> {
     Connection conn;
 
     public void SignUpBut(ActionEvent event) throws IOException, SQLException {
-        String login = loginarea.getText();//this variable to be passed in tables
-        String password = passwordarea.getText();//this variable to be passed in tables
+        String login = loginarea.getText();
+        String password = passwordarea.getText();
         if(loginarea.getText().isEmpty()) {
             forlogin.setText("The Login area cannot be empty");
         }
@@ -46,21 +46,19 @@ public class SignUpController<idd> {
         }
 
         if ( (!loginarea.getText().isEmpty()) && (!passwordarea.getText().isEmpty()) && (studentRadioButton.selectedProperty().getValue() || librarianRadioButton.selectedProperty().getValue()) ) {
-            //logic for adding person to be here
-            //A and L firstletters should be for Librarian and Administrator
-            //S for students
+
             try {
                 System.out.println(studentRadioButton.selectedProperty().getValue());
                 conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
                 Statement statement = conn.createStatement();
-//                Add student
+
                 String a = "s" + loginarea.getText();
                 System.out.println(a);
                 if ( studentRadioButton.selectedProperty().getValue() ) {
                     statement.execute("INSERT INTO users (id, password, is_admin, is_active, is_student, is_librarian) " +
                             "VALUES ('S"+loginarea.getText()+"', '"+passwordarea.getText()+"', false, false, true, false)");
                 }
-//                Add librarian
+
                 if (librarianRadioButton.selectedProperty().getValue()){
                     statement.execute("INSERT INTO users (id, password, is_admin, is_active, is_student, is_librarian) " +
                             "VALUES ('L"+loginarea.getText()+"', '"+passwordarea.getText()+"', false, false, false, true)");
@@ -69,10 +67,10 @@ public class SignUpController<idd> {
                 e.printStackTrace();
             }
         }else{
-//            incons.setText("The data is inconsistant");
+
         }
     }
-    //Add you logic here
+
 
 
 

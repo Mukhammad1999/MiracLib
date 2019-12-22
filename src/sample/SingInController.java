@@ -29,11 +29,8 @@ public class SingInController  {
     @FXML
     private Label icons;
     public void SignIn(ActionEvent event) throws IOException {
-
-
         String login = loginarea.getText();
         String password = passwordField.getText();
-
         if(loginarea.getText().isEmpty()) {
             forlogin.setText("The Login area cannot be empty");
         }else{
@@ -43,7 +40,6 @@ public class SingInController  {
         if(passwordField.getText().isEmpty()){
             forpass.setText("Password area cannot be empty");
         }
-
         if ((!loginarea.getText().isEmpty()) &&(!passwordField.getText().isEmpty())){
             User user = new User(loginarea.getText(), passwordField.getText());
 
@@ -88,4 +84,5 @@ public class SingInController  {
         stage.setScene(new Scene(root1));
         stage.show();
     }
+
 }

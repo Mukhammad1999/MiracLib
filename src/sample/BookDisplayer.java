@@ -16,7 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import sample.dbController.DBConnection;
+
 
 
 import java.awt.*;
@@ -38,11 +38,6 @@ ObservableList<Book> list = FXCollections.observableArrayList();
     @FXML private TableColumn<Book,String> isbnCol;
     @FXML private TableColumn<Book,Boolean> isavailCol;
     @FXML private TableColumn<Book,Integer> bookcounCol;
-
-
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initcol();
@@ -80,9 +75,6 @@ ObservableList<Book> list = FXCollections.observableArrayList();
         bookcounCol.setCellValueFactory(new PropertyValueFactory<>("book_count"));
         forid.setCellValueFactory(new PropertyValueFactory<>("id"));
     }
-
-
-
     public static class Book{
             private final SimpleStringProperty title;
             private final SimpleStringProperty genre;

@@ -23,7 +23,6 @@ public class DeleteUserPage {
                     Statement statement = connection.createStatement()
                     )
             {
-
                 ResultSet set =statement.executeQuery("SELECT * from users where id = '"+tobefound+"';");
                 while(set.next()){
                     String makarena = set.getString("id");
@@ -46,7 +45,6 @@ public class DeleteUserPage {
                 Statement statement = connection.createStatement()
         ) {
             if (!tobefound.isEmpty()) {
-
                 if (statement.execute("DELETE from users where id ='" + tobefound + "';")==true) {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("Success!");
@@ -62,12 +60,9 @@ public class DeleteUserPage {
                 alert.showAndWait();
             }
         }
-
         catch (SQLException ex) {
             ex.printStackTrace();
         }
-
-
     }
 
 

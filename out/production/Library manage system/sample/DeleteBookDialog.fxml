@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="676.0" prefWidth="775.0" style="-fx-background-color: #272343;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DeleteBookDialogController">
    <children>
       <AnchorPane layoutY="122.0" prefHeight="433.0" prefWidth="775.0" style="-fx-background-color: white;">
@@ -23,7 +22,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="134.0" layoutY="22.0" prefHeight="81.0" prefWidth="508.0" text="Enter the id of the book please" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="134.0" layoutY="22.0" prefHeight="81.0" prefWidth="508.0" text="Enter the title of the book please" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

@@ -7,7 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
-import sample.dbController.DBConnection;
+
 
 import java.net.URL;
 import java.sql.*;
@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 
 public class IssueLogic implements Initializable {
-    DBConnection dbConnection = new DBConnection();
+
 
     @FXML private TextField bookid;
     @FXML private TextField studentid;
@@ -114,6 +114,7 @@ public class IssueLogic implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
 
     }
 }

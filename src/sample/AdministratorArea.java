@@ -30,22 +30,15 @@ public class AdministratorArea {
         ObservableList<String> functionSet = FXCollections.observableArrayList("AddBook","DisplayBooks", "ModifyBook","DeleteBook");
         ObservableList<String> userFunctionSet = FXCollections.observableArrayList("Add User","Delete User");
 
-
-
-
-
         public void initialize() {
             librarianFunction.setItems(functionSet);
             usermanage.setItems(userFunctionSet);
-
             userId.setText(User.getUserId());
-
         }
 
         public void FunctionSet(ActionEvent event) throws IOException{
             if(librarianFunction.getValue() == "AddBook"){
                 anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("BookAdder.fxml")));
-
             }
             else if(librarianFunction.getValue() == "DisplayBooks"){
                 anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("BookDisplayer.fxml")));
@@ -55,7 +48,6 @@ public class AdministratorArea {
 
             }else if(librarianFunction.getValue() == "ModifyBook"){
                 anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("Modifier.fxml")));
-
             }
         }
         public void UserFunctionSet(ActionEvent event) throws IOException{
@@ -65,7 +57,6 @@ public class AdministratorArea {
             else if(usermanage.getValue() == "Delete User"){
                 anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("DeleteUser.fxml")));
             }
-
         }
         public void LogOut(ActionEvent event) throws IOException{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignInPage.fxml"));
@@ -73,11 +64,8 @@ public class AdministratorArea {
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root1));
             stage.show();
-
         }
-
     }
-
 
 
 

@@ -11,7 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.dbController.DBConnection;
+
 
 
 import java.io.IOException;
@@ -30,9 +30,6 @@ public class  BookModifierController {
     private TextField book_count;
     Integer id_to_find;
 
-
-
-
     public void Submit(ActionEvent event){
         if(!forID.getText().isEmpty()&&(!title.getText().isEmpty())&&(!genre.getText().isEmpty())&&(!isbn.getText().isEmpty())&&(!book_count.getText().isEmpty())){
         id_to_find= Integer.parseInt(forID.getText());
@@ -45,15 +42,11 @@ public class  BookModifierController {
         String sql1 ="UPDATE books set genre =? where id = ?";
         String sql2 ="UPDATE books set  isbn =? where id = ?";
         String sql3 ="UPDATE books set  book_count =? where id = ?";
-
-
         try (Connection conn = DriverManager.getConnection("jdbc:postgresql://localhost/Micralib", "postgres", "rahimho1499");
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, title_to_changed);
             pstmt.setInt(2, id_to_find);
             pstmt.executeUpdate();
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -62,8 +55,6 @@ public class  BookModifierController {
             pstmt1.setString(1, genre_to_changed);
             pstmt1.setInt(2, id_to_find);
             pstmt1.executeUpdate();
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,8 +63,6 @@ public class  BookModifierController {
             pstmt2.setString(1, isbn_to_changed);
             pstmt2.setInt(2, id_to_find);
             pstmt2.executeUpdate();
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -82,13 +71,9 @@ public class  BookModifierController {
             pstmt2.setInt(1, book_count_to_be_changed);
             pstmt2.setInt(2, id_to_find);
             pstmt2.executeUpdate();
-
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
     }
         else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
